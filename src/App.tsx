@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Facts from "./components/facts/Facts";
 import Footer from "./components/footer/Footer";
+import BackToTop from "./components/general-shared/back-to-top";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Portfolio from "./components/portfolio/Portfolio";
@@ -27,6 +28,7 @@ function App() {
         <Portfolio />
         <Services />
         <Contact />
+        <BackToTop />
       </main>
       <Footer />
     </div>

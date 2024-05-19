@@ -1,4 +1,4 @@
-import { PortfolioItem } from "../../models/portfolio.model";
+import { PortfolioItem } from "../../../models/portfolio.model";
 
 export const webProjects: PortfolioItem[] = [
   {

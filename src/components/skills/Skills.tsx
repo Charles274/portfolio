@@ -1,6 +1,6 @@
 const Skills = () => {
   return (
-    <section id="skills" className="skills section-bg card">
+    <section id="skills" className="skills section-bg ">
       <div className="container">
         <div className="section-title">
           <h2>Skills</h2>

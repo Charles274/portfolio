@@ -13,41 +13,39 @@ const Contact = () => {
         </div>
 
         <div className="row" data-aos="fade-in">
-          <div className="col-lg-5 d-flex align-items-stretch">
-            <div className="card">
-              <div className="card-header">Reach Out to Me</div>
-              <div className="info">
-                <div className="address">
-                  <i className="bi bi-geo-alt"></i>
-                  <h4>Location:</h4>
-                  <p>Madina, Accra, Ghana</p>
-                </div>
-
-                <div className="email">
-                  <i className="bi bi-envelope"></i>
-                  <h4>Email:</h4>
-                  <p>charles274@.com</p>
-                </div>
-
-                <div className="phone">
-                  <i className="bi bi-phone"></i>
-                  <h4>Call/Whatsapp:</h4>
-                  <p>+233 544 803023</p>
-                </div>
-
-                {/* style={{border: 0; width: 100%; height: 290px}} */}
-                {/* frameborder={0} */}
-
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                  style={{ border: "0", width: "100%", height: "290px" }}
-                ></iframe>
+          <div className="col-lg-5 d-flex align-items-stretch card contact-card">
+            <div className="card-header">Reach Out to Me</div>
+            <div className="info card-body">
+              <div className="address">
+                <i className="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Madina, Accra, Ghana</p>
               </div>
+
+              <div className="email">
+                <i className="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>charles274@.com</p>
+              </div>
+
+              <div className="phone">
+                <i className="bi bi-phone"></i>
+                <h4>Call/Whatsapp:</h4>
+                <p>+233 544 803023</p>
+              </div>
+
+              {/* style={{border: 0; width: 100%; height: 290px}} */}
+              {/* frameborder={0} */}
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                style={{ border: "0", width: "100%", height: "290px" }}
+              ></iframe>
             </div>
           </div>
 
           <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div className="card w-100">
+            <div className="card w-100 contact-card">
               <div className="card-header">Or send me a direct message</div>
               <div className="card-body">
                 <form
