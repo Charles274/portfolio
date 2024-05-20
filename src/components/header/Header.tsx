@@ -1,6 +1,12 @@
+import { useActiveSection } from "../../services/use-active-section";
+import MobileNavToggle from "../general-shared/mobile-nav-toggle";
+
 const Header = () => {
+  const { activeItemId } = useActiveSection();
+
   return (
     <header id="header">
+      <MobileNavToggle />
       <div className="d-flex flex-column">
         <div className="profile">
           <img
@@ -39,7 +45,12 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#about" className="nav-link scrollto">
+              <a
+                href="#about"
+                className={
+                  activeItemId === "about" ? "active" : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-person"></i>{" "}
                 <span className="nav-link-item">About</span>
               </a>

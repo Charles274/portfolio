@@ -1,4 +1,5 @@
 // Import Styles
+import React from "react";
 import "./App.css";
 import "./assets/css/style.css";
 
@@ -14,10 +15,11 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Resume from "./components/resume/Resume";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
+import { ActiveSectionProvider } from "./providers/active-section-provider";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
+    <ActiveSectionProvider>
       <Header />
       <Hero />
       <main id="main">
@@ -31,8 +33,8 @@ function App() {
         <BackToTop />
       </main>
       <Footer />
-    </div>
+    </ActiveSectionProvider>
   );
-}
+};
 
 export default App;

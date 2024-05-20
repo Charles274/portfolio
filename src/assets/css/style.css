@@ -38,16 +38,17 @@ h6 {
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
+  /* visibility: hidden; */
+  /* opacity: 0; */
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #149ddd;
+  background: var(--section-title-text-color);
   width: 40px;
   height: 40px;
   border-radius: 50px;
   transition: all 0.4s;
+  cursor: pointer;
 }
 
 .back-to-top i {
@@ -207,6 +208,9 @@ h6 {
 .nav-menu .active:focus i,
 .nav-menu li:hover > a i {
   color: #149ddd;
+}
+.nav-menu .active {
+  color: var(--link-text-hover-color);
 }
 
 /* Mobile Navigation */
@@ -596,7 +600,7 @@ section {
 
 .portfolio .portfolio-wrap .user-action .bi {
   font-size: 19px;
-  padding: 6px 10px;
+  padding: 4px 10px;
   border-radius: 15px;
 }
 
