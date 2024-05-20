@@ -1,4 +1,4 @@
-import { useActiveSection } from "../../services/use-active-section";
+import { useActiveSection } from "../../hooks/useActiveSection";
 import MobileNavToggle from "../general-shared/mobile-nav-toggle";
 
 const Header = () => {

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import {
   ActiveContextState,
   ActiveSectionContext,
-} from "../providers/active-section-provider";
+} from "../providers/ActiveSectionProvider";
 
 // Custom hook to use the context
 export const useActiveSection = (): ActiveContextState => {

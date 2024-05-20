@@ -15,7 +15,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Resume from "./components/resume/Resume";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
-import { ActiveSectionProvider } from "./providers/active-section-provider";
+import { ActiveSectionProvider } from "./providers/ActiveSectionProvider";
 
 const App: React.FC = () => {
   return (

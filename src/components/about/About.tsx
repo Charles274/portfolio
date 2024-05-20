@@ -1,20 +1,12 @@
 import { Waypoint } from "react-waypoint";
 import React from "react";
-import { useActiveSection } from "../../services/use-active-section";
+import { useActiveSection } from "../../hooks/useActiveSection";
 
 const About: React.FC = () => {
-  const { activeItemId, setActiveItemId } = useActiveSection();
-
-  const handleEnter = (args): void => {
-    console.log("About Entered!");
-    if (args.currentPosition === "inside") {
-      setActiveItemId("about");
-      console.log(activeItemId);
-    }
-  };
+  const { handleEnter } = useActiveSection();
 
   return (
-    <Waypoint onEnter={handleEnter}>
+    <Waypoint onEnter={(args) => handleEnter(args, "about")}>
       <section id="about" className="about">
         <div className="container">
           <div className="section-title">
