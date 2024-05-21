@@ -2,7 +2,7 @@ import { useActiveSection } from "../../hooks/useActiveSection";
 import MobileNavToggle from "../general-shared/mobile-nav-toggle";
 
 const Header = () => {
-  const { activeItemId } = useActiveSection();
+  const { currentSection } = useActiveSection();
 
   return (
     <header id="header">
@@ -38,43 +38,112 @@ const Header = () => {
 
         <nav id="navbar" className="nav-menu navbar">
           <ul>
+            {/* Hero Section Nav Link */}
             <li>
-              <a href="#hero" className="nav-link scrollto active">
+              <a
+                href="#hero"
+                className={
+                  currentSection === "hero" ? "active" : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-house"></i>{" "}
                 <span className="nav-link-item">Home</span>
               </a>
             </li>
+
+            {/* About Section Nav Link */}
+
             <li>
               <a
                 href="#about"
                 className={
-                  activeItemId === "about" ? "active" : "nav-link scrollto"
+                  currentSection === "about" ? "active" : "nav-link scrollto"
                 }
               >
-                <i className="bi bi-person"></i>{" "}
+                <i className="bi bi-info-circle"></i>{" "}
                 <span className="nav-link-item">About</span>
               </a>
             </li>
+            {/* Fact Section Nav Link */}
+
             <li>
-              <a href="#resume" className="nav-link scrollto">
+              <a
+                href="#facts"
+                className={
+                  currentSection === "facts" ? "active" : "nav-link scrollto"
+                }
+              >
+                <i className="bi bi-pin-map"></i>{" "}
+                <span className="nav-link-item">Facts</span>
+              </a>
+            </li>
+
+            {/* Skills Section Nav Link */}
+
+            <li>
+              <a
+                href="#skills"
+                className={
+                  currentSection === "skills" ? "active" : "nav-link scrollto"
+                }
+              >
+                <i className="bi bi-asterisk"></i>{" "}
+                <span className="nav-link-item">Skills</span>
+              </a>
+            </li>
+
+            {/* Resume Section Nav Link */}
+
+            <li>
+              <a
+                href="#resume"
+                className={
+                  currentSection === "resume" ? "active" : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-pen"></i>{" "}
                 <span className="nav-link-item">Resume</span>
               </a>
             </li>
+
+            {/* Portfolio Section Nav Link */}
+
             <li>
-              <a href="#portfolio" className="nav-link scrollto">
+              <a
+                href="#portfolio"
+                className={
+                  currentSection === "portfolio"
+                    ? "active"
+                    : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-journal"></i>{" "}
                 <span className="nav-link-item">Portfolio</span>
               </a>
             </li>
+
+            {/* Services Section Nav Link */}
             <li>
-              <a href="#services" className="nav-link scrollto">
+              <a
+                href="#services"
+                className={
+                  currentSection === "services" ? "active" : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-server"></i>{" "}
                 <span className="nav-link-item">Services</span>
               </a>
             </li>
+
+            {/* Contact Section Nav Link */}
+
             <li>
-              <a href="#contact" className="nav-link scrollto">
+              <a
+                href="#contact"
+                className={
+                  currentSection === "contact" ? "active" : "nav-link scrollto"
+                }
+              >
                 <i className="bi bi-envelope"></i>{" "}
                 <span className="nav-link-item">Contact</span>
               </a>

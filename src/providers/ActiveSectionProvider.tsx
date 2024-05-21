@@ -1,38 +1,52 @@
-// ActiveSectionContext.tsx
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-// Define the shape of the context state
-export interface ActiveContextState {
-  activeSection: string | null;
-  setActiveSection: (activeSection: string | null) => void;
-  handleEnter: (args, params: string) => void;
-  handleExit: (args) => void;
-}
+import { ReactNode } from "react";
 
+type ContextProviderProps = {
+  children: ReactNode;
+};
+
+type ContextProviderValues = {
+  currentSection?: string;
+  setCurrentSection?: () => void;
+};
 // Create the context with a default value of null
-const ActiveSectionContext = createContext<ActiveContextState | null>(null);
+const ActiveSectionContext = createContext<ContextProviderValues | null>(null);
 
 // Provider component
-const ActiveSectionProvider: React.FC = ({ children }) => {
-  //Declare Initial State
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+const ActiveSectionProvider: React.FC<ContextProviderProps> = ({
+  children,
+}) => {
+  // Declare initial state for current active section
+  const [currentSection, setCurrentSection] = useState<
+    ContextProviderValues | any
+  >(null);
 
-  //Handlers for entering and exiting sections
-  const handleEnter = (args, params: string): void => {
-    console.log({ args, params });
-    setActiveSection(params);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const isVisible =
+          rect.top < 0.3 * window.innerHeight && rect.bottom >= 0;
+        if (isVisible) {
+          setCurrentSection(section.id);
+        }
+      });
+    };
 
-  const handleExit = (args) => {
-    console.log(args.value);
-    setActiveSection(null);
-  };
+    // Add scroll event listener on component mount
+    document.addEventListener("scroll", handleScroll);
 
-  //Return JSX & Provider
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Return the Provider with currentSection value provided to the context
   return (
-    <ActiveSectionContext.Provider
-      value={{ activeSection, setActiveSection, handleEnter, handleExit }}
-    >
+    <ActiveSectionContext.Provider value={{ currentSection }}>
       {children}
     </ActiveSectionContext.Provider>
   );
