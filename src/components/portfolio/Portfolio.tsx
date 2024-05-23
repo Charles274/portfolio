@@ -1,4 +1,4 @@
-import { webProjects } from "../../data/projects/softwre-development/web-projects";
+import { webProjects } from "../../data/projects/softwre-development/web-projects.model";
 import { PortfolioItem } from "../../models/portfolio.model";
 
 const Portfolio = () => {

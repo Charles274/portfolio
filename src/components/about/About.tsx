@@ -7,10 +7,11 @@ const About: React.FC = () => {
         <div className="section-title">
           <h2>About</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            Through hard work, commitment and passion, I've taught myself to be
+            Web Developer. I have a Bachelor's Degree in Civil Engineering, but
+            I've always loved Computer Science since when I was a kid. I've been
+            working as a Web Developer for 2 years now, and I'm always looking
+            to learn new things and improve my skills.
           </p>
         </div>
 
@@ -23,7 +24,7 @@ const About: React.FC = () => {
             />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <h3>Frontend Web Developer &amp; Civil Engineer.</h3>
             <p className="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -33,19 +34,24 @@ const About: React.FC = () => {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Birthday:</strong> <span>1 May 1995</span>
+                    <strong>Birthday:</strong> <span>21st March</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Website:</strong> <span>www.example.com</span>
+                    <strong>Phone:</strong> <span>+233 544 803 023</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Phone:</strong> <span>+123 456 7890</span>
+                    <strong>Email:</strong>
+                    <span>charles274@live.com</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>City:</strong> <span>New York, USA</span>
+                    <strong>Country:</strong> <span>Ghana</span>
+                  </li>
+                  <li>
+                    <i className="bi bi-chevron-right"></i>
+                    <strong>City:</strong> <span>Accra</span>
                   </li>
                 </ul>
               </div>
@@ -53,18 +59,20 @@ const About: React.FC = () => {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>{" "}
-                    <strong>Age:</strong>
-                    <span>30</span>
+                    <strong>Language:</strong>
+                    <span>English (Proficient)</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Degree:</strong> <span>Master</span>
+                    <strong>Special Cert.:</strong>{" "}
+                    <span>Responsive Web Design</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>PhEmailone:</strong>
-                    <span>email@example.com</span>
+                    <strong>Degree:</strong>{" "}
+                    <span>Bachelor, Civil Engineering</span>
                   </li>
+
                   <li>
                     <i className="bi bi-chevron-right"></i>
                     <strong>Freelance:</strong> <span>Available</span>
