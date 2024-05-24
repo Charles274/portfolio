@@ -1,17 +1,33 @@
+import { useEffect, useState } from "react";
 import { WorkExperiences } from "../../data/resume/work-duties.model";
 import { ResumeWorkItem } from "../../models/resume.model";
 
-const Resume = () => {
+interface ResumeProps {
+  displayAll: boolean;
+}
+
+const Resume: React.FC<ResumeProps> = ({ displayAll = false }) => {
+  const [showAll] = useState<boolean>(displayAll);
+  const [workExperiences, setWorkExperiences] = useState<ResumeWorkItem[]>([]);
+
+  useEffect(() => {
+    if (!showAll) {
+      setWorkExperiences(WorkExperiences.slice(0, 1));
+      return;
+    }
+    setWorkExperiences(WorkExperiences);
+  }, [displayAll, showAll]);
+
   return (
     <section id="resume" className="resume">
       <div className="container">
         <div className="section-title">
           <h2>Resume</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            "Experience, skills, and achievements - my resume tells the story of
+            my professional journey. Take a look at my resume to see how my
+            qualifications align with your needs and how I can contribute to
+            your team's success."
           </p>
         </div>
 
@@ -64,9 +80,20 @@ const Resume = () => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 className="resume-title">Professional Experience</h3>
 
-            {WorkExperiences.map((workExperience) => (
+            {workExperiences.map((workExperience) => (
               <WorkExperienceItem workItem={workExperience} />
             ))}
+
+            {!showAll && (
+              <div className="d-flex justify-content-end">
+                <a
+                  href="#"
+                  className="btn btn-outline-light d-flex gap-2 align-items-center"
+                >
+                  Read Full Resume<i className="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -83,6 +110,7 @@ export const ResumeListItem = ({ item }: { item: string }) => {
 interface Props {
   workItem: ResumeWorkItem;
 }
+
 const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
   return (
     <div className="resume-item">

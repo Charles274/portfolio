@@ -5,10 +5,12 @@ const Services = () => {
         <div className="section-title">
           <h2>Services</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            "What can I do for you? My services are designed to help individuals
+            and businesses like yours succeed. From Web Development to Civil
+            Engineering, I offer a range of solutions to meet your unique needs.
+            Take a look at my services below to see how I can help you achieve
+            your goals." Let me know if you need any adjustments or have any
+            other requests!
           </p>
         </div>
 

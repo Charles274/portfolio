@@ -5,10 +5,9 @@ const Facts = () => {
         <div className="section-title">
           <h2>Facts</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            Get to know me in a nutshell! This section shares some interesting
+            facts and figures about my professional journey. Take a glance to
+            get a better sense of who I am and what I can bring to the table.
           </p>
         </div>
 

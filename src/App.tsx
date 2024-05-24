@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <About />
         <Facts />
         <Skills />
-        <Resume />
+        <Resume displayAll={false} />
         <Portfolio />
         <Services />
         <Contact />

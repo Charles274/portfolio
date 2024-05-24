@@ -5,10 +5,10 @@ const Skills = () => {
         <div className="section-title">
           <h2>Skills</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            What sets me apart? This section highlights my technical and
+            creative skills, showcasing my expertise in Web Development and
+            Engineering, I've got the skills to drive your project forward. Take
+            a look to see how my skills align with your needs.
           </p>
         </div>
 

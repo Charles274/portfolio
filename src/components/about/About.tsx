@@ -81,17 +81,19 @@ const About: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <p>
+            <p className="text-justify">
               Passionate frontend developer with 3+ years of experience in
               crafting dynamic web applications. I specialize in bringing
               designs to life with pixel-perfect precision, collaborating with
               talented colleagues, and contributing to diverse projects using
-              GIT and GITHUB. I have experience with modern frameworks like
-              React and Angular, design tools like Figma, and responsive layouts
-              with Bootstrap. I also have foundational knowledge in backend
-              technologies like Node.js, Express.js, and MongoDB. Notable
-              project. As a Civil Engineer with 6+ years of experience, I'm now
-              a versatile and adaptable developer in the tech industry.
+              GIT and GITHUB.
+              <br />
+              <br />I have experience with modern frameworks like React and
+              Angular and responsive layouts with Bootstrap, Tailwind. I also
+              have foundational knowledge in backend technologies like Node.js,
+              Express.js, and MongoDB. As a Civil Engineer with 6+ years of
+              experience, I'm now a versatile and adaptable developer in the
+              tech industry.
             </p>
           </div>
         </div>

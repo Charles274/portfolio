@@ -5,10 +5,11 @@ const Contact = () => {
         <div className="section-title">
           <h2>Contact</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            Let's Connect! Want to discuss a project, collaboration, or just say
+            hello? This is the place to reach out! You can find my contact
+            information, social media links, and a convenient message form to
+            get in touch with me. I'd love to hear from you and explore ways we
+            can work together or share ideas.
           </p>
         </div>
 
