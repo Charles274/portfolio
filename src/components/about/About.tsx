@@ -10,7 +10,7 @@ const About: React.FC = () => {
             Through hard work, commitment and passion, I've taught myself to be
             Web Developer. I have a Bachelor's Degree in Civil Engineering, but
             I've always loved Computer Science since when I was a kid. I've been
-            working as a Web Developer for 2 years now, and I'm always looking
+            working as a Web Developer for 3+ years now, and I'm always looking
             to learn new things and improve my skills.
           </p>
         </div>
@@ -34,7 +34,8 @@ const About: React.FC = () => {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Birthday:</strong> <span>21st March</span>
+                    <strong>Fullname:</strong>{" "}
+                    <span>Charles Owusu Agyapong</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
@@ -81,13 +82,16 @@ const About: React.FC = () => {
               </div>
             </div>
             <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio
-              vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor
-              incidunt officia tempore. Et eius omnis. Cupiditate ut dicta
-              maxime officiis quidem quia. Sed et consectetur qui quia
-              repellendus itaque neque. Aliquid amet quidem ut quaerat
-              cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium
-              dolores.
+              Passionate frontend developer with 3+ years of experience in
+              crafting dynamic web applications. I specialize in bringing
+              designs to life with pixel-perfect precision, collaborating with
+              talented colleagues, and contributing to diverse projects using
+              GIT and GITHUB. I have experience with modern frameworks like
+              React and Angular, design tools like Figma, and responsive layouts
+              with Bootstrap. I also have foundational knowledge in backend
+              technologies like Node.js, Express.js, and MongoDB. Notable
+              project. As a Civil Engineer with 6+ years of experience, I'm now
+              a versatile and adaptable developer in the tech industry.
             </p>
           </div>
         </div>

@@ -583,6 +583,7 @@ section {
   overflow: hidden;
   z-index: 1;
   border-radius: 16px;
+  height: 100%;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -611,6 +612,7 @@ section {
 
 .portfolio .portfolio-wrap .img-fluid {
   border-radius: inherit;
+  height: 150px;
 }
 /* .portfolio-tag-container {
 

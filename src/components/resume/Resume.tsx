@@ -1,4 +1,5 @@
-import { MNJWorkDuties } from "../../data/resume/work-duties.model";
+import { WorkExperiences } from "../../data/resume/work-duties.model";
+import { ResumeWorkItem } from "../../models/resume.model";
 
 const Resume = () => {
   return (
@@ -7,14 +8,10 @@ const Resume = () => {
         <div className="section-title">
           <h2>Resume</h2>
           <p>
-            3 years of experience in building dynamic, user-friendly web
-            applications Expertise in React, Angular, and other modern
-            frameworks Skilled in design implementation, responsive layouts, and
-            collaboration Developed frontend for innovative Artist Booking
-            Platform, AGERMAX Knowledge of backend technologies (Node.js,
-            Express.js, MongoDB) for seamless integration Transitioned from
-            civil engineering to tech industry through self-study and
-            determination
+            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
+            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+            fugiat sit in iste officiis commodi quidem hic quas.
           </p>
         </div>
 
@@ -47,14 +44,14 @@ const Resume = () => {
             <h3 className="resume-title">Education & Training</h3>
             <div className="resume-item">
               <h4>Responsive Web Design</h4>
-              <h5>2023 - 2024</h5>
+              <h5>Nov 2023 - Jan 2024</h5>
               <p>
                 <em>Free-Code-Camp Academy</em>
               </p>
             </div>
             <div className="resume-item">
               <h4>Bsc Civil Engineering</h4>
-              <h5>2012 - 2016</h5>
+              <h5>May 2012 - July 2016</h5>
               <p>
                 <em>
                   Kwame Nkrumah University of Science and Technology, Kumasi,
@@ -66,43 +63,10 @@ const Resume = () => {
           </div>
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 className="resume-title">Professional Experience</h3>
-            <div className="resume-item">
-              <h4>Frontend Web Developer</h4>
-              <h5>Jan 2022 - May 2024</h5>
-              <p>
-                <em>MNJ Micro Systems, Accra, Ghana </em>
-              </p>
-              <ul>
-                {MNJWorkDuties.map((duty) => (
-                  <ResumeListItem item={duty} />
-                ))}
-              </ul>
-            </div>
-            <div className="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p>
-                <em>Stepping Stone Advertising, New York, NY</em>
-              </p>
-              <ul>
-                <li>
-                  Developed numerous marketing programs (logos,
-                  brochures,infographics, presentations, and advertisements).
-                </li>
-                <li>
-                  Managed up to 5 projects or tasks at a given time while under
-                  pressure
-                </li>
-                <li>
-                  Recommended and consulted with clients on the most appropriate
-                  graphic design
-                </li>
-                <li>
-                  Created 4+ design presentations and proposals a month for
-                  clients and account managers
-                </li>
-              </ul>
-            </div>
+
+            {WorkExperiences.map((workExperience) => (
+              <WorkExperienceItem workItem={workExperience} />
+            ))}
           </div>
         </div>
       </div>
@@ -114,4 +78,28 @@ export default Resume;
 
 export const ResumeListItem = ({ item }: { item: string }) => {
   return <li className="work-list-item">{item}</li>;
+};
+
+interface Props {
+  workItem: ResumeWorkItem;
+}
+const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
+  return (
+    <div className="resume-item">
+      <h4>{workItem.position}</h4>
+      <h5>
+        {workItem.startDate} - {workItem.endDate}
+      </h5>
+      <p>
+        <em>
+          {workItem.company} - {workItem.city}
+        </em>
+      </p>
+      <ul>
+        {workItem.duties.map((duty) => (
+          <ResumeListItem item={duty} />
+        ))}
+      </ul>
+    </div>
+  );
 };
