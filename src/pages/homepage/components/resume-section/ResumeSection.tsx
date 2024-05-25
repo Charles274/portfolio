@@ -105,11 +105,11 @@ export const ResumeListItem = ({ item }: { item: string }) => {
   return <>{item}</>;
 };
 
-interface Props {
+export interface Props {
   workItem: ResumeWorkItem;
 }
 
-const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
+export const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
   return (
     <>
       <h4>{workItem.position}</h4>

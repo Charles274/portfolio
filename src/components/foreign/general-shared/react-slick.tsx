@@ -15,7 +15,9 @@ export const SlickPortfolioCarousel: React.FC<ReactSlickCarouselProps> = ({
   const settings = {
     dots: true,
     infinite: true,
+    adaptiveHeight: false,
     speed: 500,
+    centerMode: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [

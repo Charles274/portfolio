@@ -6,7 +6,7 @@ const PortfolioPage = () => {
     <main id="main">
       <BreadCrumbsNav />
 
-      <PortfolioSection />
+      <PortfolioSection layoutConfig="grid" />
     </main>
   );
 };

@@ -42,7 +42,11 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
 
         <div className="row" data-aos="fade-up">
           <div className="d-flex justify-content-end">
-            <SeeMoreButton path="/portfolio" text="See All Portfolio Items" />
+            <SeeMoreButton
+              path="/portfolio"
+              text="See All Portfolio Items"
+              visibility={layoutConfig === "grid" ? "hidden" : "visible"}
+            />
           </div>
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
@@ -88,7 +92,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
             {projects.map((item, index) => (
               <div
                 key={index}
-                className="col-lg-4 col-md-6 portfolio-item filter-app"
+                className="col-lg-4 col-md-6 portfolio-item filter-app mb-4"
               >
                 <PortfolioCard
                   img={item.img}
@@ -116,7 +120,7 @@ export const PortfolioCard = ({
   id,
 }: PortfolioItem) => {
   return (
-    <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3">
+    <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3 m-2">
       <div className="portfolio-header d-flex justify-content-between">
         <div className="portfolio-project-logo">
           <i className={category?.iconClass}></i>

@@ -18,6 +18,7 @@ import PortfolioDetailsPage from "./pages/portfolio/portfolio-details/PortfolioD
 import RootLayout from "./layouts/RootLayout";
 import PortfolioPage from "./pages/portfolio/PortfolioPage";
 import NoMatch from "./pages/no-match/NoMatch";
+import ResumePage from "./pages/resume/ResumePage";
 // import DetailsPageLayout from "./layouts/DetailsPageLayout";
 
 const router = createBrowserRouter(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         <Route index element={<PortfolioPage />} />
         <Route path=":id/details/:slug" element={<PortfolioDetailsPage />} />
       </Route>
+      <Route path="resume" element={<ResumePage />} />
       <Route path="*" element={<NoMatch />} />
     </Route>
   )
