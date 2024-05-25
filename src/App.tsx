@@ -14,17 +14,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
-import PortfolioDetails from "./pages/portfolio/portfolio-details/portfolio-details";
+import PortfolioDetailsPage from "./pages/portfolio/portfolio-details/PortfolioDetailsPage";
 import RootLayout from "./layouts/RootLayout";
-import PortfolioPage from "./pages/portfolio/Portfolio";
+import PortfolioPage from "./pages/portfolio/PortfolioPage";
 import NoMatch from "./pages/no-match/NoMatch";
+import DetailsPageLayout from "./layouts/DetailsPageLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Homepage />} />
-      <Route path="portfolio" element={<PortfolioPage />}>
-        <Route path=":id" element={<PortfolioDetails />} />
+      <Route path="portfolio" element={<DetailsPageLayout />}>
+        <Route index element={<PortfolioPage />} />
+        <Route path=":id" element={<PortfolioDetailsPage />} />
       </Route>
       <Route path="*" element={<NoMatch />} />
     </Route>

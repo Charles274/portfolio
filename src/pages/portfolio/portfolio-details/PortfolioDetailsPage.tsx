@@ -1,21 +1,7 @@
-const PortfolioDetails = () => {
+const PortfolioDetailsPage = () => {
   return (
     <main id="main">
-      <section id="breadcrumbs" className="breadcrumbs">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2>Portfolio Details</h2>
-            <ol>
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>Portfolio Details</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="portfolio-details">
+      <section id="portfolio" className="portfolio-details section-bg">
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-8">
@@ -84,4 +70,4 @@ const PortfolioDetails = () => {
   );
 };
 
-export default PortfolioDetails;
+export default PortfolioDetailsPage;

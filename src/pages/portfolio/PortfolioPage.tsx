@@ -1,14 +1,11 @@
-import PortfolioSection from "../homepage/components/portfolio-section/Portfolio";
+import PortfolioSection from "../homepage/components/portfolio-section/PortfolioSection";
 
 const PortfolioPage = () => {
-  console.log("Pooorttttto");
-
   return (
     <main id="main">
-      <section id="breadcrumbs" className="breadcrumbs">
+      <section id="breadcrumbs" className="breadcrumbs bg-gradient">
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2>Portfolio Details</h2>
+          <div className="d-flex justify-content-end align-items-center">
             <ol>
               <li>
                 <a href="/">Home</a>
