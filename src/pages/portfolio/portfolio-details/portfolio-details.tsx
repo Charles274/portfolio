@@ -7,7 +7,7 @@ const PortfolioDetails = () => {
             <h2>Portfolio Details</h2>
             <ol>
               <li>
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>Portfolio Details</li>
             </ol>
@@ -15,7 +15,7 @@ const PortfolioDetails = () => {
         </div>
       </section>
 
-      <section id="portfolio-details" className="portfolio-details">
+      <section id="portfolio" className="portfolio-details">
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-8">

@@ -1,16 +1,22 @@
-import { ReactNode } from "react";
+// import { ReactNode } from "react";
 import Header from "../components/header/Header";
 import BackToTop from "../components/general-shared/back-to-top";
 import Footer from "../components/footer/Footer";
+import { Outlet } from "react-router-dom";
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+// type RootLayoutProps = {
+//   children: ReactNode;
+// };
+
+const RootLayout = () => {
   return (
     <div>
       <Header />
-      {children}
+
+      {/* ===Outlet Here=== */}
+      <Outlet />
+      {/* ===Outlet Here=== */}
+
       <BackToTop />
       <Footer />
     </div>

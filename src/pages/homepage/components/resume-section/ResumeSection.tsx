@@ -6,7 +6,7 @@ interface ResumeProps {
   displayAll: boolean;
 }
 
-const Resume: React.FC<ResumeProps> = ({ displayAll = false }) => {
+const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
   const [showAll] = useState<boolean>(displayAll);
   const [workExperiences, setWorkExperiences] = useState<ResumeWorkItem[]>([]);
 
@@ -103,7 +103,7 @@ const Resume: React.FC<ResumeProps> = ({ displayAll = false }) => {
   );
 };
 
-export default Resume;
+export default ResumeSection;
 
 export const ResumeListItem = ({ item }: { item: string }) => {
   return <>{item}</>;

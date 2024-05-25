@@ -1,4 +1,4 @@
-const Skills = () => {
+const SkillsSection = () => {
   return (
     <section id="skills" className="skills section-bg ">
       <div className="container">
@@ -34,7 +34,7 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsSection;
 
 type SkillItemProp = {
   skill: string;

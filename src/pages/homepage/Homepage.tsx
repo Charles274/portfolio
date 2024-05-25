@@ -1,25 +1,25 @@
 // Import Components
-import About from "./components/about/About";
-import Facts from "./components/facts/Facts";
-import Skills from "./components/skills/Skills";
-import Resume from "./components/resume/Resume";
-import Portfolio from "./components/portfolio/Portfolio";
-import Services from "./components/services/Services";
-import Contact from "./components/contact/Contact";
-import Hero from "./components/hero/Hero";
+import AboutSection from "./components/about-section/AboutSection";
+import FactsSection from "./components/facts-section/FactsSection";
+import SkillsSection from "./components/skills-section/SkillsSection";
+import PortfolioSection from "./components/portfolio-section/Portfolio";
+import Services from "./components/services-section/ServicesSection";
+import ContactSection from "./components/contact-section/ContactSection";
+import HeroSection from "./components/hero-section/HeroSection";
+import ResumeSection from "./components/resume-section/ResumeSection";
 
 const Homepage = () => {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <main id="main">
-        <About />
-        <Facts />
-        <Skills />
-        <Resume displayAll={false} />
-        <Portfolio />
+        <AboutSection />
+        <FactsSection />
+        <SkillsSection />
+        <ResumeSection displayAll={false} />
+        <PortfolioSection />
         <Services />
-        <Contact />
+        <ContactSection />
       </main>
     </>
   );

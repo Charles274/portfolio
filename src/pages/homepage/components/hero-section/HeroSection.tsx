@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
-const Hero = () => {
+const HeroSection = () => {
   const typedRef = useRef(null);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

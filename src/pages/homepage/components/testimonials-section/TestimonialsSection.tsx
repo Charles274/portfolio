@@ -1,4 +1,4 @@
-const Testimonials = () => {
+const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="testimonials section-bg">
       <div className="container">
@@ -140,4 +140,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default TestimonialsSection;

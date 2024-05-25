@@ -1,4 +1,4 @@
-const Contact = () => {
+const ContactSection = () => {
   const whatsappNumber = "+233544803023";
   const message = "Hello, I'm interested in your portfolio!";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -158,4 +158,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

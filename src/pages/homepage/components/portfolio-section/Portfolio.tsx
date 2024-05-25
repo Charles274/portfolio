@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PortfolioProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
 
-const Portfolio = () => {
+const PortfolioSection = () => {
   const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
 
   const [filter, setFilter] = useState("All");
@@ -90,7 +90,7 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default PortfolioSection;
 
 export const PortfolioCard = ({
   img,
