@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PortfolioProjects } from "../../data/projects/softwre-development/web-projects.model";
+import { PortfolioProjects } from "../../data/projects/Projects.model";
 import { PortfolioItem } from "../../models/portfolio.model";
 
 const Portfolio = () => {
@@ -70,15 +70,18 @@ export default Portfolio;
 
 export const PortfolioCard = ({ img, title }: PortfolioItem) => {
   return (
-    <div className="portfolio-wrap card p-3">
+    <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3">
       <div className="portfolio-header d-flex justify-content-between">
         <div className="portfolio-project-logo">
           <i className="bi bi-amazon"></i>
         </div>
         <div className="portfolio-project-options d-flex gap-3">
-          <button className="btn btn btn-outline-light d-flex gap-2 align-items-center">
+          <a
+            href="#"
+            className="btn  btn-outline-light d-flex gap-2 align-items-center"
+          >
             Read Post<i className="bi bi-box-arrow-up-right"></i>
-          </button>
+          </a>
           <div className="dropdown">
             <i className="bi bi-three-dots-vertical"></i>
           </div>
