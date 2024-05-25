@@ -1,10 +1,10 @@
 import { PortfolioItem } from "../../../models/portfolio.model";
 
-export const webProjects: PortfolioItem[] = [
+export const PortfolioProjects: PortfolioItem[] = [
   {
     id: 1,
     title: "Agermax Artists Booking Platform",
-    category: "Web Development",
+    category: "Web App",
     description: "A web development project.",
     img: "portfolio-1.jpg",
   },
@@ -25,42 +25,42 @@ export const webProjects: PortfolioItem[] = [
   {
     id: 4,
     title: "Restaurant Management Web App",
-    category: "Web Development",
+    category: "Web App",
     description: "Another web development project.",
     img: "portfolio-4.jpg",
   },
   {
     id: 5,
     title: "Project Five",
-    category: "Mobile App",
+    category: "Civil",
     description: "Another mobile application project.",
     img: "portfolio-5.jpg",
   },
   {
     id: 6,
     title: "Project Six",
-    category: "Graphic Design",
+    category: "Civil",
     description: "Another graphic design project.",
     img: "portfolio-6.jpg",
   },
   {
     id: 7,
     title: "Project Seven",
-    category: "Web Development",
+    category: "Civil",
     description: "Yet another web development project.",
     img: "portfolio-7.jpg",
   },
   {
     id: 8,
     title: "Project Eight",
-    category: "Mobile App",
+    category: "Civil",
     description: "Yet another mobile application project.",
     img: "portfolio-8.jpg",
   },
   {
     id: 9,
     title: "Project Nine",
-    category: "Graphic Design",
+    category: "Civil",
     description: "Yet another graphic design project.",
     img: "portfolio-9.jpg",
   },

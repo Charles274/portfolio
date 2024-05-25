@@ -1,14 +1,11 @@
 // ActiveSectionContext.tsx
 import { useContext } from "react";
-import {
-  ActiveContextState,
-  ActiveSectionContext,
-} from "../providers/ActiveSectionProvider";
+import { ActiveSectionContext } from "../providers/ActiveSectionProvider";
 
 // Custom hook to use the context
-export const useActiveSection = (): ActiveContextState => {
+export const useActiveSection = () => {
   const context = useContext(ActiveSectionContext);
-  if (context === null) {
+  if (context === undefined) {
     throw new Error(
       "useActiveSection must be used within a ActiveSectionProvider"
     );

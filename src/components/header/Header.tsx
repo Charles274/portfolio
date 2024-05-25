@@ -1,5 +1,5 @@
-import { useActiveSection } from "../../hooks/useActiveSection";
 import MobileNavToggle from "../general-shared/mobile-nav-toggle";
+import { useActiveSection } from "../../hooks/useActiveSection";
 
 const Header = () => {
   const { currentSection } = useActiveSection();
@@ -38,116 +38,16 @@ const Header = () => {
 
         <nav id="navbar" className="nav-menu navbar">
           <ul>
-            {/* Hero Section Nav Link */}
-            <li>
-              <a
-                href="#hero"
-                className={
-                  currentSection === "hero" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-house"></i>{" "}
-                <span className="nav-link-item">Home</span>
-              </a>
-            </li>
-
-            {/* About Section Nav Link */}
-
-            <li>
-              <a
-                href="#about"
-                className={
-                  currentSection === "about" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-info-circle"></i>{" "}
-                <span className="nav-link-item">About</span>
-              </a>
-            </li>
-            {/* Fact Section Nav Link */}
-
-            <li>
-              <a
-                href="#facts"
-                className={
-                  currentSection === "facts" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-pin-map"></i>{" "}
-                <span className="nav-link-item">Facts</span>
-              </a>
-            </li>
-
-            {/* Skills Section Nav Link */}
-
-            <li>
-              <a
-                href="#skills"
-                className={
-                  currentSection === "skills" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-asterisk"></i>{" "}
-                <span className="nav-link-item">Skills</span>
-              </a>
-            </li>
-
-            {/* Resume Section Nav Link */}
-
-            <li>
-              <a
-                href="#resume"
-                className={
-                  currentSection === "resume" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-pen"></i>{" "}
-                <span className="nav-link-item">Resume</span>
-              </a>
-            </li>
-
-            {/* Portfolio Section Nav Link */}
-
-            <li>
-              <a
-                href="#portfolio"
-                className={
-                  currentSection === "portfolio"
-                    ? "active"
-                    : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-journal"></i>{" "}
-                <span className="nav-link-item">Portfolio</span>
-              </a>
-            </li>
-
-            {/* Services Section Nav Link */}
-            <li>
-              <a
-                href="#services"
-                className={
-                  currentSection === "services" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-server"></i>{" "}
-                <span className="nav-link-item">Services</span>
-              </a>
-            </li>
-
-            {/* Contact Section Nav Link */}
-
-            <li>
-              <a
-                href="#contact"
-                className={
-                  currentSection === "contact" ? "active" : "nav-link scrollto"
-                }
-              >
-                <i className="bi bi-envelope"></i>{" "}
-                <span className="nav-link-item">Contact</span>
-              </a>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <LinkListItem
+                  currentSection={currentSection}
+                  icon={item.iconClass}
+                  sectionId={item.sectionId}
+                  sectionName={item.sectionName}
+                />
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -156,3 +56,86 @@ const Header = () => {
 };
 
 export default Header;
+
+interface ListItemProps {
+  currentSection: string;
+  sectionId: string;
+  sectionName: string;
+  icon: string;
+}
+
+const LinkListItem: React.FC<ListItemProps> = ({
+  currentSection,
+  sectionId,
+  sectionName,
+  icon,
+}) => {
+  return (
+    <a
+      href={`#${sectionId}`}
+      className={currentSection === sectionId ? "active" : "nav-link scrollto"}
+    >
+      <i className={icon}></i>{" "}
+      <span className="nav-link-item">{sectionName}</span>
+    </a>
+  );
+};
+
+//Nav Items
+const navItems = [
+  {
+    id: 1,
+    sectionId: "hero",
+    sectionName: "Home",
+    iconClass: "bi bi-house",
+  },
+  {
+    id: 2,
+
+    sectionId: "about",
+    sectionName: "About",
+    iconClass: "bi bi-info-circle",
+  },
+  {
+    id: 3,
+
+    sectionId: "facts",
+    sectionName: "Facts",
+    iconClass: "bi bi-pin-map",
+  },
+  {
+    id: 4,
+
+    sectionId: "skills",
+    sectionName: "Skills",
+    iconClass: "bi bi-asterisk",
+  },
+  {
+    id: 5,
+
+    sectionId: "resume",
+    sectionName: "Resume",
+    iconClass: "bi bi-pen",
+  },
+  {
+    id: 6,
+
+    sectionId: "portfolio",
+    sectionName: "Portfolio",
+    iconClass: "bi bi-journal",
+  },
+  {
+    id: 7,
+
+    sectionId: "services",
+    sectionName: "Services",
+    iconClass: "bi bi-server",
+  },
+  {
+    id: 8,
+
+    sectionId: "contact",
+    sectionName: "Contact",
+    iconClass: "bi bi-envelope",
+  },
+];

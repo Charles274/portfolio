@@ -918,7 +918,6 @@ section {
 .contact .info i {
   font-size: 20px;
   color: #149ddd;
-  float: left;
   width: 44px;
   height: 44px;
   background: #dff3fc;
@@ -929,8 +928,9 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.contact .info h4 {
-  padding: 0 0 0 60px;
+.contact .info h4,
+.contact .info a {
+  padding: 0 0 0 20px;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;

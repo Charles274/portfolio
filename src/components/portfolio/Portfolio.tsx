@@ -1,7 +1,17 @@
-import { webProjects } from "../../data/projects/softwre-development/web-projects.model";
+import { useState } from "react";
+import { PortfolioProjects } from "../../data/projects/softwre-development/web-projects.model";
 import { PortfolioItem } from "../../models/portfolio.model";
 
 const Portfolio = () => {
+  const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
+
+  const handleFilter: React.MouseEventHandler<HTMLLIElement> = (e) => {
+    const value = e.currentTarget.id;
+    setProjects(
+      PortfolioProjects.filter((project) => project.category === value)
+    );
+  };
+
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
@@ -19,12 +29,20 @@ const Portfolio = () => {
         <div className="row" data-aos="fade-up">
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
-              <li data-filter="*" className="filter-active">
+              <li
+                data-filter="*"
+                className="filter-active"
+                onClick={() => setProjects(PortfolioProjects)}
+              >
                 All
               </li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app" id="Web App" onClick={handleFilter}>
+                Web Apps
+              </li>
+              <li data-filter=".filter-card" id="Civil" onClick={handleFilter}>
+                Civil
+              </li>
+              {/* <li data-filter=".filter-web">Web</li> */}
             </ul>
           </div>
         </div>
@@ -34,7 +52,7 @@ const Portfolio = () => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          {webProjects.map((item, index) => (
+          {projects.map((item, index) => (
             <div
               key={index}
               className="col-lg-4 col-md-6 portfolio-item filter-app"

@@ -1,4 +1,10 @@
 const Contact = () => {
+  const whatsappNumber = "+233544803023";
+  const message = "Hello, I'm interested in your portfolio!";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -17,22 +23,32 @@ const Contact = () => {
           <div className="col-lg-5 d-flex align-items-stretch card contact-card">
             <div className="card-header">Reach Out to Me</div>
             <div className="info card-body">
-              <div className="address">
+              <div className="address d-flex mb-3 align-items-center">
                 <i className="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Madina, Accra, Ghana</p>
+                <h4>Location: Accra, Ghana</h4>
               </div>
 
-              <div className="email">
+              <div className="email d-flex mb-3 align-items-center">
                 <i className="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>charles274@.com</p>
+                {/* <!-- Email link --> */}
+                <a href="mailto:charles274@live.com"> Send Email </a>
               </div>
 
-              <div className="phone">
+              <div className="phone d-flex mb-3 align-items-center">
                 <i className="bi bi-phone"></i>
-                <h4>Call/Whatsapp:</h4>
-                <p>+233 544 803023</p>
+                <a href="tel:+233544803023"> Call Me </a>
+              </div>
+
+              <div className="phone whatsapp d-flex mb-3 align-items-center ">
+                <i className="bi bi-whatsapp"></i>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-link-text"
+                >
+                  Text me on WhatsApp
+                </a>
               </div>
 
               {/* style={{border: 0; width: 100%; height: 290px}} */}
@@ -47,7 +63,9 @@ const Contact = () => {
 
           <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <div className="card w-100 contact-card">
-              <div className="card-header">Or send me a direct message</div>
+              <div className="card-header">
+                Or Send Me A Quick Message From Here.
+              </div>
               <div className="card-body">
                 <form
                   action="forms/contact.php"
