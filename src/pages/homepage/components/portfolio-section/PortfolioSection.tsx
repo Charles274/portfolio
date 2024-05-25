@@ -106,7 +106,7 @@ export const PortfolioCard = ({
         </div>
         <div className="portfolio-project-options d-flex gap-3">
           <a
-            href="/14"
+            href="/portfolio/14"
             className="btn  btn-outline-light d-flex gap-2 align-items-center"
           >
             Read Post<i className="bi bi-box-arrow-up-right"></i>
