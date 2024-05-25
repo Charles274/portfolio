@@ -80,8 +80,10 @@ const Resume: React.FC<ResumeProps> = ({ displayAll = false }) => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 className="resume-title">Professional Experience</h3>
 
-            {workExperiences.map((workExperience) => (
-              <WorkExperienceItem workItem={workExperience} />
+            {workExperiences.map((workExperience, index) => (
+              <div key={index} className="resume-item">
+                <WorkExperienceItem workItem={workExperience} />
+              </div>
             ))}
 
             {!showAll && (
@@ -104,7 +106,7 @@ const Resume: React.FC<ResumeProps> = ({ displayAll = false }) => {
 export default Resume;
 
 export const ResumeListItem = ({ item }: { item: string }) => {
-  return <li className="work-list-item">{item}</li>;
+  return <>{item}</>;
 };
 
 interface Props {
@@ -113,7 +115,7 @@ interface Props {
 
 const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
   return (
-    <div className="resume-item">
+    <>
       <h4>{workItem.position}</h4>
       <h5>
         {workItem.startDate} - {workItem.endDate}
@@ -124,10 +126,12 @@ const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
         </em>
       </p>
       <ul>
-        {workItem.duties.map((duty) => (
-          <ResumeListItem item={duty} />
+        {workItem.duties.map((duty, index) => (
+          <li key={index} className="work-list-item">
+            <ResumeListItem item={duty} />
+          </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };

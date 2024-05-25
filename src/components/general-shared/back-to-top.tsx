@@ -6,7 +6,7 @@ const BackToTop = () => {
   return (
     <a
       href="#hero"
-      style={{ visibility: currentSection === "hero" ? "hidden" : "visible" }}
+      style={{ opacity: currentSection === "hero" ? "0" : "1" }}
       className="back-to-top d-flex align-items-center justify-content-center"
     >
       <i className="bi bi-arrow-up-short"></i>

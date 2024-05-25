@@ -1,4 +1,11 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 interface ContextProviderProps {
   children: ReactNode;
@@ -6,23 +13,13 @@ interface ContextProviderProps {
 
 interface ContextProviderValues {
   currentSection: string;
+  setCurrentSection: Dispatch<SetStateAction<string>>;
 }
 
 // Create the context with a default value of undefined
 const ActiveSectionContext = createContext<ContextProviderValues | undefined>(
   undefined
 );
-
-// Debounce function to limit the rate at which the handleScroll function is called
-const debounce = (func: () => void, wait: number) => {
-  let timeout: number;
-  return () => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func();
-    }, wait);
-  };
-};
 
 // Provider component
 const ActiveSectionProvider: React.FC<ContextProviderProps> = ({
@@ -32,32 +29,38 @@ const ActiveSectionProvider: React.FC<ContextProviderProps> = ({
   const [currentSection, setCurrentSection] = useState("about");
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const isVisible =
-          rect.top < 0.3 * window.innerHeight && rect.bottom >= 0;
-        if (isVisible) {
-          console.log("Section ID: ", section.id);
-          console.log("Current Section: ", currentSection);
-          setCurrentSection(section.id);
+    const sections = document.querySelectorAll("section");
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: [1, 0.5], // Trigger when 50% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setCurrentSection(entry.target.id);
+          console.log("Current Section: ", entry.target.id);
         }
       });
-    }, 200); // Adjust the debounce wait time as needed
+    }, options);
 
-    // Add scroll event listener on component mount
-    document.addEventListener("scroll", handleScroll);
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
 
-    // Clean up the event listener on component unmount
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
     };
-  }, [currentSection]);
+  }, []);
 
   // Return the Provider with currentSection value provided to the context
   return (
-    <ActiveSectionContext.Provider value={{ currentSection }}>
+    <ActiveSectionContext.Provider
+      value={{ currentSection, setCurrentSection }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );

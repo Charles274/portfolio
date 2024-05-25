@@ -5,11 +5,19 @@ import { PortfolioItem } from "../../models/portfolio.model";
 const Portfolio = () => {
   const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
 
+  const [filter, setFilter] = useState("All");
+
   const handleFilter: React.MouseEventHandler<HTMLLIElement> = (e) => {
     const value = e.currentTarget.id;
     setProjects(
-      PortfolioProjects.filter((project) => project.category === value)
+      PortfolioProjects.filter((project) => project.category?.name === value)
     );
+    setFilter(value);
+  };
+
+  const handleResetFilter = () => {
+    setProjects(PortfolioProjects);
+    setFilter("All");
   };
 
   return (
@@ -18,11 +26,11 @@ const Portfolio = () => {
         <div className="section-title">
           <h2>Portfolio</h2>
           <p>
-            Welcome to My Portfolio This is a showcase of my best work,
+            Welcome to My Portfolio. This is a showcase of some of my best work,
             featuring projects that demonstrate my skills and expertise. From
-            Civil to Tech, I've curated a selection of pieces that highlight my
-            passion for what I do. Take a look around, and I hope you enjoy
-            exploring my creative endeavors!
+            Software to Civil Engineering, I've curated a selection of pieces
+            that highlight my passion for what I do. Take a look around, and I
+            hope you enjoy exploring my creative endeavors!
           </p>
         </div>
 
@@ -30,16 +38,27 @@ const Portfolio = () => {
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
               <li
+                id="All"
                 data-filter="*"
-                className="filter-active"
-                onClick={() => setProjects(PortfolioProjects)}
+                className={filter === "All" ? "filter-active" : ""}
+                onClick={handleResetFilter}
               >
                 All
               </li>
-              <li data-filter=".filter-app" id="Web App" onClick={handleFilter}>
+              <li
+                className={filter === "Web App" ? "filter-active" : ""}
+                data-filter=".filter-app"
+                id="Web App"
+                onClick={handleFilter}
+              >
                 Web Apps
               </li>
-              <li data-filter=".filter-card" id="Civil" onClick={handleFilter}>
+              <li
+                className={filter === "Civil" ? "filter-active" : ""}
+                data-filter=".filter-card"
+                id="Civil"
+                onClick={handleFilter}
+              >
                 Civil
               </li>
               {/* <li data-filter=".filter-web">Web</li> */}
@@ -57,7 +76,12 @@ const Portfolio = () => {
               key={index}
               className="col-lg-4 col-md-6 portfolio-item filter-app"
             >
-              <PortfolioCard img={item.img} title={item.title} />
+              <PortfolioCard
+                img={item.img}
+                title={item.title}
+                category={item.category}
+                tags={item.tags}
+              />
             </div>
           ))}
         </div>
@@ -68,12 +92,17 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-export const PortfolioCard = ({ img, title }: PortfolioItem) => {
+export const PortfolioCard = ({
+  img,
+  title,
+  category,
+  tags,
+}: PortfolioItem) => {
   return (
     <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3">
       <div className="portfolio-header d-flex justify-content-between">
         <div className="portfolio-project-logo">
-          <i className="bi bi-amazon"></i>
+          <i className={category?.iconClass}></i>
         </div>
         <div className="portfolio-project-options d-flex gap-3">
           <a
@@ -91,8 +120,11 @@ export const PortfolioCard = ({ img, title }: PortfolioItem) => {
         <h4 className="mb-4 mt-4">{title}</h4>
       </div>
       <div className="portfolio-tags-container d-flex gap-2 mb-2">
-        <span className="portfolio-tag">#tag 1 </span>
-        <span className="portfolio-tag">#tag 2 </span>
+        {tags?.map((tag, index) => (
+          <div key={index} className="portfolio-tag">
+            #{tag}
+          </div>
+        ))}
       </div>
       <div className="portfolio-publish-date">
         {new Date().toLocaleDateString()}

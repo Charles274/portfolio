@@ -39,7 +39,7 @@ h6 {
 .back-to-top {
   position: fixed;
   /* visibility: hidden; */
-  /* opacity: 0; */
+  opacity: 0;
   right: 15px;
   bottom: 15px;
   z-index: 996;
@@ -89,7 +89,7 @@ h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 3px solid var(--section-title-text-color);
+  border: 8px solid var(--post-card-background-color);
 }
 
 #header .profile h1 {
@@ -200,14 +200,14 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover > a {
   text-decoration: none;
-  color: #fff;
+  color: var(--link-text-hover-color);
 }
 
 .nav-menu a:hover i,
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover > a i {
-  color: #149ddd;
+  color: var(--link-text-hover-color);
 }
 .nav-menu .active {
   color: var(--link-text-hover-color);
@@ -584,6 +584,13 @@ section {
   z-index: 1;
   border-radius: 16px;
   height: 100%;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio .portfolio-wrap:hover {
+  box-shadow: 0 3px 2px var(--main-font-color);
+  transform: translateY(-5px);
 }
 
 .portfolio .portfolio-wrap::before {
