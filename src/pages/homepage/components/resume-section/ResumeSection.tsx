@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { WorkExperiences } from "../../../../data/resume/work-duties.model";
 import { ResumeWorkItem } from "../../../../models/resume.model";
+import SeeMoreButton from "../../../../components/local/general-shared/see-more-button";
 
 interface ResumeProps {
   displayAll: boolean;
@@ -88,12 +89,7 @@ const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
 
             {!showAll && (
               <div className="d-flex justify-content-end">
-                <a
-                  href="#"
-                  className="btn btn-outline-light d-flex gap-2 align-items-center"
-                >
-                  Read Full Resume<i className="bi bi-box-arrow-up-right"></i>
-                </a>
+                <SeeMoreButton text="Read Full Resume" path="/resume" />
               </div>
             )}
           </div>

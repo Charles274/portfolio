@@ -1,4 +1,4 @@
-import { useActiveSection } from "../../hooks/useActiveSection";
+import { useActiveSection } from "../../../hooks/useActiveSection";
 
 const BackToTop = () => {
   const { currentSection } = useActiveSection();

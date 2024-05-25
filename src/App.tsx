@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route index element={<Homepage />} />
       <Route path="portfolio">
         <Route index element={<PortfolioPage />} />
-        <Route path=":id" element={<PortfolioDetailsPage />} />
+        <Route path=":id/details/:slug" element={<PortfolioDetailsPage />} />
       </Route>
       <Route path="*" element={<NoMatch />} />
     </Route>

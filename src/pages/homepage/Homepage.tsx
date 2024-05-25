@@ -17,7 +17,7 @@ const Homepage = () => {
         <FactsSection />
         <SkillsSection />
         <ResumeSection displayAll={false} />
-        <PortfolioSection />
+        <PortfolioSection layoutConfig="carousel" />
         <Services />
         <ContactSection />
       </main>

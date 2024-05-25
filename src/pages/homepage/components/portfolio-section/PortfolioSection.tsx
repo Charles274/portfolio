@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { PortfolioProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
+import SeeMoreButton from "../../../../components/local/general-shared/see-more-button";
+import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
 
-const PortfolioSection = () => {
+type PortfolioSectionProps = {
+  layoutConfig: "carousel" | "grid";
+};
+
+const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
   const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
 
   const [filter, setFilter] = useState("All");
@@ -35,6 +41,9 @@ const PortfolioSection = () => {
         </div>
 
         <div className="row" data-aos="fade-up">
+          <div className="d-flex justify-content-end">
+            <SeeMoreButton path="/portfolio" text="See All Portfolio Items" />
+          </div>
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
               <li
@@ -66,25 +75,32 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        <div
-          className="row portfolio-container"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          {projects.map((item, index) => (
-            <div
-              key={index}
-              className="col-lg-4 col-md-6 portfolio-item filter-app"
-            >
-              <PortfolioCard
-                img={item.img}
-                title={item.title}
-                category={item.category}
-                tags={item.tags}
-              />
-            </div>
-          ))}
-        </div>
+        {layoutConfig === "carousel" && (
+          <SlickPortfolioCarousel items={projects} />
+        )}
+
+        {layoutConfig === "grid" && (
+          <div
+            className="row portfolio-container"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            {projects.map((item, index) => (
+              <div
+                key={index}
+                className="col-lg-4 col-md-6 portfolio-item filter-app"
+              >
+                <PortfolioCard
+                  img={item.img}
+                  title={item.title}
+                  category={item.category}
+                  tags={item.tags}
+                  id={item.id}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -97,6 +113,7 @@ export const PortfolioCard = ({
   title,
   category,
   tags,
+  id,
 }: PortfolioItem) => {
   return (
     <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3">
@@ -106,7 +123,7 @@ export const PortfolioCard = ({
         </div>
         <div className="portfolio-project-options d-flex gap-3">
           <a
-            href="/portfolio/14"
+            href={`/portfolio/${id}/details/${title}`}
             className="btn  btn-outline-light d-flex gap-2 align-items-center"
           >
             Read Post<i className="bi bi-box-arrow-up-right"></i>
