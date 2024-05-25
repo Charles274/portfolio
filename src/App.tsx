@@ -3,36 +3,34 @@ import React from "react";
 import "./App.css";
 import "./assets/css/style.css";
 
-// Import Components
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
-import Facts from "./components/facts/Facts";
-import Footer from "./components/footer/Footer";
-import BackToTop from "./components/general-shared/back-to-top";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Portfolio from "./components/portfolio/Portfolio";
-import Resume from "./components/resume/Resume";
-import Services from "./components/services/Services";
-import Skills from "./components/skills/Skills";
+//Providers
 import { ActiveSectionProvider } from "./providers/ActiveSectionProvider";
+
+//Browser
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+import Homepage from "./pages/homepage/Homepage";
+import PortfolioDetails from "./pages/portfolio-details/portfolio-details";
+import RootLayout from "./layouts/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route index element={<Homepage />} />
+      <Route path="details" element={<PortfolioDetails />} />
+    </Route>
+  )
+);
 
 const App: React.FC = () => {
   return (
     <ActiveSectionProvider>
-      <Header />
-      <Hero />
-      <main id="main">
-        <About />
-        <Facts />
-        <Skills />
-        <Resume displayAll={false} />
-        <Portfolio />
-        <Services />
-        <Contact />
-        <BackToTop />
-      </main>
-      <Footer />
+      <RootLayout>
+        <Homepage />
+      </RootLayout>
     </ActiveSectionProvider>
   );
 };

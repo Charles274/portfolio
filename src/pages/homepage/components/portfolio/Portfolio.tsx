@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { PortfolioProjects } from "../../data/projects/Projects.model";
-import { PortfolioItem } from "../../models/portfolio.model";
+import { PortfolioProjects } from "../../../../data/projects/Projects.model";
+import { PortfolioItem } from "../../../../models/portfolio.model";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);

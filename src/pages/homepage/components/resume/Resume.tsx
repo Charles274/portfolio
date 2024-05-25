@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { WorkExperiences } from "../../data/resume/work-duties.model";
-import { ResumeWorkItem } from "../../models/resume.model";
+import { WorkExperiences } from "../../../../data/resume/work-duties.model";
+import { ResumeWorkItem } from "../../../../models/resume.model";
 
 interface ResumeProps {
   displayAll: boolean;
