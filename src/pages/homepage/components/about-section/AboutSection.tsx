@@ -17,11 +17,7 @@ const AboutSection: React.FC = () => {
 
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">
-            <img
-              src="/src/assets/img/IMGL2860.jpg"
-              className="card img-fluid"
-              alt=""
-            />
+            <img src="/images/IMGL2860.jpg" className="card img-fluid" alt="" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Frontend Web Developer &amp; Civil Engineer.</h3>
