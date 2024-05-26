@@ -6,6 +6,7 @@ const PortfolioDetailsPage: React.FC = () => {
   const { portfolioId } = useParams<{ portfolioId: string }>();
   const id = Number(portfolioId);
   const project = PortfolioProjects.find((proj) => proj.id == id);
+  console.log(project);
 
   return (
     <main id="main">
