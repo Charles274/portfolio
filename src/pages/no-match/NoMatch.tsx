@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NoMatch = () => {
   return (
-    <main id="main">
+    <main id="main" className="main">
       <section id="portfolio">
         <h2>Nothing to see here!</h2>
         <p>

@@ -7,7 +7,7 @@ import { WorkExperienceItem } from "../homepage/components/resume-section/Resume
 const ResumePage = () => {
   return (
     <main id="main">
-      <section id="resume" className="resume pt-2">
+      <section id="resume" className="resume ">
         <div className="container">
           <div className="resume-title-wrapper text-center  mb-3">
             <h2 className="resume-title fs-2">CHARLES OWUSU AGYAPONG</h2>
