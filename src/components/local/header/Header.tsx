@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { useActiveSection } from "../../../hooks/useActiveSection";
-import MobileNavToggle from "../general-shared/mobile-nav-toggle";
 
 const Header = () => {
   const { currentSection } = useActiveSection();
 
   return (
     <header id="header">
-      <MobileNavToggle />
       <div className="d-flex flex-column">
         <div className="profile">
           <Link to={"/"}>

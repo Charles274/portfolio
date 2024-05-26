@@ -14,7 +14,7 @@ const PortfolioDetailsPage: React.FC = () => {
           <div className="row gy-4">
             <div className="col-lg-8">
               {/* //Carousel */}
-              <BootstrapCarousel />
+              <BootstrapCarousel images={project?.img} title={project?.title} />
             </div>
 
             <div className="col-lg-4">

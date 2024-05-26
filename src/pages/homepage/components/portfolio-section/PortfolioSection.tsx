@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { PortfolioProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
-import SeeMoreButton from "../../../../components/local/general-shared/see-more-button";
 import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
+import { Link } from "react-router-dom";
 
 type PortfolioSectionProps = {
   layoutConfig: "carousel" | "grid";
@@ -42,11 +42,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
 
         <div className="row" data-aos="fade-up">
           <div className="d-flex justify-content-end">
-            <SeeMoreButton
-              path="/portfolio"
-              text="See All Portfolio Items"
-              visibility={layoutConfig === "grid" ? "hidden" : "visible"}
-            />
+            <Link to={"/portfolio"}>See All</Link>
           </div>
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">

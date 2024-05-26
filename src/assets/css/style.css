@@ -1155,6 +1155,10 @@ section {
   .breadcrumbs ol li {
     display: inline-block;
   }
+
+  .breadcrumbs-nav {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------

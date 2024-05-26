@@ -11,7 +11,12 @@ export const PortfolioProjects: PortfolioItem[] = [
     category: WebCategory,
     description:
       "Agermax Artists Booking Platform is a comprehensive web application built using Next.js 13. It serves as a centralized platform for artists to showcase their work and connect with potential clients for bookings. The platform offers an intuitive user interface, allowing artists to create profiles, upload portfolios, manage bookings, and interact with clients seamlessly. As the frontend developer on this project, I was responsible for implementing the user interface, ensuring responsiveness across devices, and optimizing performance. The backend stack comprises Express.js and MongoDB, providing robust data management and authentication functionalities. Additionally, I contributed to building administrative features for users with administrative rights, enhancing the platform's functionality and usability.",
-    img: ["portfolio-1.jpg"],
+    img: [
+      "portfolio-1.jpg",
+      "portfolio-2.jpg",
+      "portfolio-3.jpg",
+      "portfolio-4.jpg",
+    ],
     tags: ["React", "Next.js", "Express.js", "MongoDB"],
     projectUrl: "https://app.agermax.com",
     projectStartDate: new Date(2024, 0), // January 2024
