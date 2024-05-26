@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 import MobileNavToggle from "../general-shared/mobile-nav-toggle";
 
@@ -9,13 +10,15 @@ const Header = () => {
       <MobileNavToggle />
       <div className="d-flex flex-column">
         <div className="profile">
-          <img
-            src="\src\assets\img\passport.jpg"
-            alt=""
-            className="img-fluid rounded-circle"
-          />
+          <Link to={"/"}>
+            <img
+              src="\src\assets\img\passport.jpg"
+              alt=""
+              className="img-fluid rounded-circle"
+            />
+          </Link>
           <h1 className="text-light">
-            <a href="index.html">Charles Owusu</a>
+            <a href="/">Charles Owusu</a>
           </h1>
           <div className="social-links mt-3 text-center">
             <a href="#" className="twitter">

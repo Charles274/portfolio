@@ -1,16 +1,12 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const BreadCrumbsNav = () => {
   const location = useLocation();
-  const params = useParams();
-  const paramsValues = Object.keys(params);
-
-  console.log({ location, paramsValues });
 
   let currentLink = "";
 
   // List of dynamic parameters to exclude from breadcrumbs
-  const dynamicParams = [...paramsValues, "id", "details"]; // Add any other dynamic segments you want to exclude
+  const dynamicParams = ["details"]; // Add any other dynamic segments you want to exclude
 
   const crumbs = location.pathname
     .split("/")
