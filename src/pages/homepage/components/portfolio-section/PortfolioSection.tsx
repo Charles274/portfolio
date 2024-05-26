@@ -146,7 +146,11 @@ export const PortfolioCard = ({
       <div className="portfolio-publish-date">
         {new Date().toLocaleDateString()}
       </div>
-      <img src={`/images/portfolio/${img}`} className="img-fluid mt-3" alt="" />
+      <img
+        src={`/images/portfolio/${img ? img[0] : ""}`}
+        className="img-fluid mt-3"
+        alt=""
+      />
       <div className="user-actions-container d-flex justify-content-between mt-3">
         <div className="user-action vote">
           <i className="bi bi-hand-thumbs-up"></i>
