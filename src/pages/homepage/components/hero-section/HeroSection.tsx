@@ -30,7 +30,7 @@ const HeroSection = () => {
       className="d-flex flex-column justify-content-center align-items-center"
     >
       <div className="hero-container" data-aos="fade-in">
-        <h1>Charles Owusu</h1>
+        <h1>Engr. Charles Owusu</h1>
         <p>
           <span>I'm a </span>
           <span
@@ -39,7 +39,10 @@ const HeroSection = () => {
             ref={typedRef}
           ></span>
         </p>
-        <a href="#about" className="btn btn-outline-info border-white hero-btn">
+        <a
+          href="#about"
+          className="btn btn-outline-light border-white hero-btn"
+        >
           Get Started <i className="bi bi-arrow-down"></i>
         </a>
       </div>
