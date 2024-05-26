@@ -12,8 +12,8 @@ const HeroSection = () => {
         "Freelancer",
         "Consultant",
       ],
-      typeSpeed: 100,
-      backSpeed: 200,
+      typeSpeed: 50,
+      backSpeed: 100,
       loop: true,
     };
 
@@ -39,6 +39,9 @@ const HeroSection = () => {
             ref={typedRef}
           ></span>
         </p>
+        {/* <a href="#about" className="btn btn-outline-primary">
+          Get Started
+        </a> */}
       </div>
     </section>
   );

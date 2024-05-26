@@ -66,21 +66,12 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
-.breadcrumbs-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background-color: var(--main-background-color);
-  z-index: 99;
-}
 .site-container {
   background-color: var(--main-background-color);
 }
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 
 #header {
   position: fixed;
@@ -176,6 +167,15 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+
+.breadcrumbs-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: var(--main-background-color);
+  z-index: 99;
+}
+
 .nav-menu {
   padding: 30px 0 0 0;
 }
@@ -263,7 +263,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("/public/images/Hero Background.jpg") top center;
   background-size: cover;
 }
 

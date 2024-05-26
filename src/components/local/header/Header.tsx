@@ -24,10 +24,10 @@ const Header = () => {
             <a href="#" className="twitter">
               <i className="bi bi-twitter"></i>
             </a>
-            <a href="#" className="facebook">
+            <a href="www.facebook.com/charles.n.owusu" className="facebook">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#" className="instagram">
+            <a href="www.instagram.com.brother_charles" className="instagram">
               <i className="bi bi-instagram"></i>
             </a>
             <a href="#" className="google-plus">
