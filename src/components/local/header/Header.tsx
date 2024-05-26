@@ -10,7 +10,7 @@ const Header = () => {
         <div className="profile">
           <Link to={"/"}>
             <img
-              src="/public/images/passport.jpg"
+              src="/images/passport.jpg"
               alt=""
               className="img-fluid rounded-circle"
             />
