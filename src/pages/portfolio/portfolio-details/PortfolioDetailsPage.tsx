@@ -1,35 +1,20 @@
-const PortfolioDetailsPage = () => {
+import { useParams } from "react-router-dom";
+import { PortfolioProjects } from "../../../data/projects/Projects.model";
+import BootstrapCarousel from "../../../components/foreign/general-shared/BootstrapCarousel";
+
+const PortfolioDetailsPage: React.FC = () => {
+  const { portfolioId } = useParams<{ portfolioId: string }>();
+  const id = Number(portfolioId);
+  const project = PortfolioProjects.find((proj) => proj.id == id);
+
   return (
     <main id="main">
       <section id="portfolio" className="portfolio-details section-bg">
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-8">
-              <div className="portfolio-details-slider swiper">
-                <div className="swiper-wrapper align-items-center">
-                  <div className="swiper-slide">
-                    <img
-                      src="assets/img/portfolio/portfolio-details-1.jpg"
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="swiper-slide">
-                    <img
-                      src="assets/img/portfolio/portfolio-details-2.jpg"
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="swiper-slide">
-                    <img
-                      src="assets/img/portfolio/portfolio-details-3.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="swiper-pagination"></div>
-              </div>
+              {/* //Carousel */}
+              <BootstrapCarousel />
             </div>
 
             <div className="col-lg-4">
@@ -37,30 +22,24 @@ const PortfolioDetailsPage = () => {
                 <h3>Project information</h3>
                 <ul>
                   <li>
-                    <strong>Category</strong>: Web design
+                    <strong>Category</strong>: {project?.category.name}
                   </li>
                   <li>
-                    <strong>Client</strong>: ASU Company
+                    <strong>Client</strong>: {project?.client}
                   </li>
                   <li>
-                    <strong>Project date</strong>: 01 March, 2020
+                    <strong>Project date</strong>:{" "}
+                    {project?.projectStartDate?.toLocaleDateString()}
                   </li>
                   <li>
                     <strong>Project URL</strong>:{" "}
-                    <a href="#">www.example.com</a>
+                    <a href={project?.projectUrl}>{project?.projectUrl}</a>
                   </li>
                 </ul>
               </div>
               <div className="portfolio-description">
-                <h2>This is an example of portfolio detail</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos
-                  itaque inventore commodi labore quia quia. Exercitationem
-                  repudiandae officiis neque suscipit non officia eaque itaque
-                  enim. Voluptatem officia accusantium nesciunt est omnis
-                  tempora consectetur dignissimos. Sequi nulla at esse enim cum
-                  deserunt eius.
-                </p>
+                <h2>Project Description</h2>
+                <p>{project?.description}</p>
               </div>
             </div>
           </div>
