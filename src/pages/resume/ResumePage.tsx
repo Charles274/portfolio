@@ -15,7 +15,9 @@ const ResumePage = () => {
               [ Frontend Developer | Civil Engineer ]
             </h6>
             <h3 className="resume-title ">Professional Experience</h3>
-            <SeeMoreButton path="/" text="Download My CV" />
+            <div className="d-flex justify-content-end">
+              <SeeMoreButton path="/" text="Download My CV" />
+            </div>
           </div>
           <div className="row">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
