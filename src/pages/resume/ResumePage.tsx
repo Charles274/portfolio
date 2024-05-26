@@ -1,5 +1,6 @@
 // import ResumeSection from "../homepage/components/resume-section/ResumeSection";
 
+import SeeMoreButton from "../../components/local/general-shared/see-more-button";
 import { WorkExperiences } from "../../data/resume/work-duties.model";
 import { WorkExperienceItem } from "../homepage/components/resume-section/ResumeSection";
 
@@ -14,6 +15,7 @@ const ResumePage = () => {
               [ Frontend Developer | Civil Engineer ]
             </h6>
             <h3 className="resume-title ">Professional Experience</h3>
+            <SeeMoreButton path="/" text="Download My CV" />
           </div>
           <div className="row">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
