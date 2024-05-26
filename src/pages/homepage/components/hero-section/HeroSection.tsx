@@ -39,9 +39,9 @@ const HeroSection = () => {
             ref={typedRef}
           ></span>
         </p>
-        {/* <a href="#about" className="btn btn-outline-primary">
-          Get Started
-        </a> */}
+        <a href="#about" className="btn btn-outline-info border-white hero-btn">
+          Get Started <i className="bi bi-arrow-down"></i>
+        </a>
       </div>
     </section>
   );
