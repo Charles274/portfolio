@@ -480,6 +480,10 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+.resume .resume-title-wrapper {
+  border-bottom: 4px solid #1f5297;
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
