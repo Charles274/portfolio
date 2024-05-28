@@ -40,8 +40,8 @@ const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
               <p>
                 <em>
                   "Highly skilled and deadline-driven Frontend Web Developer and
-                  Civil Engineer with 2+ years of experience in Web Development
-                  & 6years in Civil Engineering. Proficient in designing and
+                  Civil Engineer with 3+ years of experience in Web Development
+                  & 6+ years in Civil Engineering. Proficient in designing and
                   developing user-centered Web Applications
                   <br />
                   <br />
