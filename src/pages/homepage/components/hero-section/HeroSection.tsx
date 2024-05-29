@@ -39,6 +39,10 @@ const HeroSection = () => {
             ref={typedRef}
           ></span>
         </p>
+        <p>
+          This site is still undergoing development but I've still got some
+          great to show
+        </p>
         <a
           href="#about"
           className="btn btn-outline-light border-white hero-btn"

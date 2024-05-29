@@ -15,7 +15,7 @@ export const WorkExperiences = [
   {
     id: 1,
     position: "Frontend Developer",
-    startDate: "Jan 2021",
+    startDate: "Jan 2022",
     endDate: "May 2024",
     company: "MNJ Micro Systems",
     city: "Accra",
