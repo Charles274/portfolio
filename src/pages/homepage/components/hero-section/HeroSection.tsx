@@ -41,7 +41,7 @@ const HeroSection = () => {
         </p>
         <p>
           This site is still undergoing development but I've still got some
-          great to show
+          great to show..
         </p>
         <a
           href="#about"
