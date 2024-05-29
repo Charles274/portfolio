@@ -55,9 +55,9 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
                 All
               </li>
               <li
-                className={filter === "Web App" ? "filter-active" : ""}
+                className={filter === "Web" ? "filter-active" : ""}
                 data-filter=".filter-app"
-                id="Web App"
+                id="Web"
                 onClick={handleFilter}
               >
                 Web Apps
