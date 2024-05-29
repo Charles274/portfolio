@@ -1,3 +1,5 @@
+import { CategoryName } from "./portfolio.model";
+
 export interface ResumeWorkItem {
   id: number;
   position: string;
@@ -7,5 +9,12 @@ export interface ResumeWorkItem {
   city: string;
   country?: string;
   duties: string[];
-  category?: string;
+  category?: CategoryName;
+  projects?: ResumeWorkItemProject[];
+}
+
+export interface ResumeWorkItemProject {
+  id?: number;
+  name: string;
+  description: string;
 }

@@ -13,7 +13,7 @@ export interface PortfolioItem {
 
 export interface Category {
   name: CategoryName;
-  iconClass: string;
+  iconClass?: string;
 }
 
 export enum CategoryName {

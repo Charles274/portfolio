@@ -1,3 +1,6 @@
+import { CategoryName } from "../../models/portfolio.model";
+import { ResumeWorkItem } from "../../models/resume.model";
+
 export const MNJWorkDuties = [
   "Designed and developed responsive and interactive user interfaces for web applications",
   "Implemented front-end logic using JavaScript, Typescript, HTML, CSS, and frameworks like React or Angular",
@@ -11,7 +14,7 @@ export const MNJWorkDuties = [
   "Stayed up-to-date with industry trends and emerging technologies in frontend development",
 ];
 
-export const WorkExperiences = [
+export const WorkExperiences: ResumeWorkItem[] = [
   {
     id: 1,
     position: "Frontend Developer",
@@ -20,6 +23,7 @@ export const WorkExperiences = [
     company: "MNJ Micro Systems",
     city: "Accra",
     country: "Ghana",
+    category: CategoryName.Web,
     duties: [
       "Designed and developed responsive and interactive user interfaces for web applications",
       "Implemented front-end logic using JavaScript, Typescript, HTML, CSS, and frameworks like React or Angular",
@@ -35,6 +39,24 @@ export const WorkExperiences = [
       "Collaborated with designers to translate designs into pixel-perfect UI components",
       "Implemented responsive layouts using Bootstrap and ensured cross-browser compatibility",
       "Utilized GIT and GITHUB for version control and collaboration with team members",
+    ],
+    projects: [
+      {
+        id: 1,
+        name: "AGERMAX",
+        description:
+          "Agermax Artists Booking Platform is a comprehensive web application built using Next.js 13. It serves as a centralized platform for artists to showcase their work and connect with potential clients for bookings. The platform offers an intuitive user interface, allowing artists to create profiles, upload portfolios, manage bookings, and interact with clients seamlessly. As the frontend developer on this project, I was responsible for implementing the user interface, ensuring responsiveness across devices, and optimizing performance and integrated the API Services. The backend stack comprises Express.js and MongoDB, providing robust data management and authentication functionalities. Additionally, I contributed to building administrative features for users with administrative rights, enhancing the platform's functionality and usability. Visit for your reference https://app.agermax.com.",
+      },
+      {
+        id: 2,
+        name: "MNJ Micro Systems",
+        description: `Developed the app front views and designs using Bootstrap, Typescript & AngularJS and also the app-back for the admin management system. Scripting for API Services and integration with Backend built with Django & PostgreSQL.
+          Developed a comprehensive web-based productivity management platform designed to streamline various management systems with to promote efficiency across different domains. 
+          The platform suits consists of Personal Management System: Goal setting, task management, calendar synchronization, and public interaction. 
+          Hotel Management System: Reservation management, guest tracking, and personalized service interaction. Restaurant Management System: Menu management, order processing, and customer interaction. 
+          Company Management System: Employee management, project tracking, and stakeholder communication. Association/Organization Management System: Member and event management, goal tracking, and public engagement. 
+          Production Management System: Production scheduling, inventory tracking, and quality assurance.`,
+      },
     ],
   },
   {
