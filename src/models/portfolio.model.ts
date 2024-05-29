@@ -18,7 +18,7 @@ export interface Category {
 
 export enum CategoryName {
   All = "All",
-  Web = "Web App",
+  Web = "Web",
   Civil = "Civil",
 }
 

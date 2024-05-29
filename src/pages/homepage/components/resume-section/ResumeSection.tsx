@@ -20,7 +20,7 @@ const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
   }, [displayAll, showAll]);
 
   return (
-    <section id="resume" className="resume">
+    <section id="resume" className="resume text-justify">
       <div className="container">
         <div className="section-title">
           <h2>Resume</h2>
@@ -121,13 +121,29 @@ export const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
           {workItem.company} - {workItem.city}
         </em>
       </p>
-      <ul>
+      <ul className="text-justify">
         {workItem.duties.map((duty, index) => (
-          <li key={index} className="work-list-item">
-            <ResumeListItem item={duty} />
+          <li key={index} className="work-list-item text-justify">
+            {duty}
           </li>
         ))}
       </ul>
+
+      {/* Optionally Show Projects */}
+
+      {workItem?.projects &&
+        workItem?.projects?.map((project, index) => (
+          <div key={index} className="text-justify mb-4">
+            <p>
+              <em>
+                Key Project {index + 1} - {project?.title}{" "}
+              </em>
+            </p>
+            <div key={index} className="work-list-item ">
+              <p>{project.description}</p>
+            </div>
+          </div>
+        ))}
     </>
   );
 };

@@ -43,13 +43,13 @@ export const WorkExperiences: ResumeWorkItem[] = [
     projects: [
       {
         id: 1,
-        name: "AGERMAX",
+        title: "AGERMAX",
         description:
           "Agermax Artists Booking Platform is a comprehensive web application built using Next.js 13. It serves as a centralized platform for artists to showcase their work and connect with potential clients for bookings. The platform offers an intuitive user interface, allowing artists to create profiles, upload portfolios, manage bookings, and interact with clients seamlessly. As the frontend developer on this project, I was responsible for implementing the user interface, ensuring responsiveness across devices, and optimizing performance and integrated the API Services. The backend stack comprises Express.js and MongoDB, providing robust data management and authentication functionalities. Additionally, I contributed to building administrative features for users with administrative rights, enhancing the platform's functionality and usability. Visit for your reference https://app.agermax.com.",
       },
       {
         id: 2,
-        name: "MNJ Micro Systems",
+        title: "Maninjer Productivity Platform",
         description: `Developed the app front views and designs using Bootstrap, Typescript & AngularJS and also the app-back for the admin management system. Scripting for API Services and integration with Backend built with Django & PostgreSQL.
           Developed a comprehensive web-based productivity management platform designed to streamline various management systems with to promote efficiency across different domains. 
           The platform suits consists of Personal Management System: Goal setting, task management, calendar synchronization, and public interaction. 
@@ -67,6 +67,8 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "SHIMIZU DAINIPON JOINT VENTURES (SDJV), SHIMIZU CORPORATION",
     city: "Assin Praso - Assin Fosu",
     country: "Ghana",
+    category: CategoryName.Civil,
+
     duties: [
       "Led and supervised a team of 12-16 workers daily in the construction of civil works, ensuring adherence to design specifications",
       "Assisted the Construction Manager in coordinating and supervising site construction activities, presenting daily reports, and monitoring construction progress",
@@ -89,6 +91,7 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "ARCHITECTURAL AND ENGINEERING SERVICE LTD (A.E.S.L)",
     city: "Kumasi",
     country: "Ghana",
+    category: CategoryName.Civil,
     duties: [
       "Assisted the Structural Engineer in collaborating with clients and other professional stakeholders",
       "Provided Consulting services and ensuring quality of work",
@@ -107,6 +110,8 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "JUBILEE CONTRACTORS",
     city: "Kumasi",
     country: "Ghana",
+    category: CategoryName.Civil,
+
     duties: [
       "Assisted in supervising road construction projects and coordinated work activities and site labour",
       "Provided documented site reports to the project manager, conducted routine site safety and progress meetings",
@@ -124,6 +129,8 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "LEADCOM GHANA LTD",
     city: "Kumasi",
     country: "Ghana",
+    category: CategoryName.Civil,
+
     duties: [
       "Conducted field investigations, foundation mapping, and condition surveys for the maintenance of telecommunication towers and structures",
       "Conducted regular HSE training for general workers, ensuring a safe working environment",
@@ -141,6 +148,8 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "ROCON ENGINEERING LTD",
     city: "Kumasi",
     country: "Ghana",
+    category: CategoryName.Civil,
+
     duties: [
       "Conducted existing road condition surveys, reconnaissance surveys, and feasibility studies for road projects",
       "Performed site inspections and provided reports to consultants for decision-making processes",
@@ -156,6 +165,8 @@ export const WorkExperiences: ResumeWorkItem[] = [
     company: "Department of Urban Roads",
     city: "Kumasi",
     country: "Ghana",
+    category: CategoryName.Civil,
+
     duties: [
       "Conducted existing road condition surveys, reconnaissance surveys, and feasibility studies for road projects",
       "Performed site inspections and provided reports to consultants for decision-making processes",
@@ -172,6 +183,7 @@ export const WorkExperiences: ResumeWorkItem[] = [
     city: "Kumasi",
     country: "Ghana",
     duties: [],
+    category: CategoryName.Civil,
   },
   {
     id: 9,
@@ -182,5 +194,6 @@ export const WorkExperiences: ResumeWorkItem[] = [
     city: "Kumasi",
     country: "Ghana",
     duties: [],
+    category: CategoryName.Civil,
   },
 ];

@@ -15,6 +15,6 @@ export interface ResumeWorkItem {
 
 export interface ResumeWorkItemProject {
   id?: number;
-  name: string;
+  title: string;
   description: string;
 }
