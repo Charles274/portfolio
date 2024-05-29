@@ -29,7 +29,8 @@ const Header = () => {
   }, []);
 
   const handleToggleSideNavOpen = () => {
-    setSideNavOpen(!isSideNavOpen);
+    const width = window.innerWidth;
+    if (width < 1200) setSideNavOpen(!isSideNavOpen);
   };
 
   return (
