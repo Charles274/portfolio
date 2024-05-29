@@ -1,11 +1,49 @@
 import { Link } from "react-router-dom";
 import { useActiveSection } from "../../../hooks/useActiveSection";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { currentSection } = useActiveSection();
+  const [isSideNavOpen, setSideNavOpen] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1200) {
+        // adjust these values to your needs
+        setSideNavOpen(true);
+      } else {
+        setSideNavOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Trigger the handler initially to set the state correctly
+    handleResize();
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleToggleSideNavOpen = () => {
+    setSideNavOpen(!isSideNavOpen);
+  };
 
   return (
-    <header id="header">
+    <header id="header" style={{ left: isSideNavOpen ? "0px" : "-300px" }}>
+      {/* ==Hamburger Menu Toggler== */}
+      <div onClick={handleToggleSideNavOpen} className="">
+        <i
+          className={`bi bi-${
+            isSideNavOpen ? "x" : "list"
+          } mobile-nav-toggle d-xl-none`}
+        ></i>
+      </div>
+      {/* ==Hamburger Menu Toggler== */}
+
       <div className="d-flex flex-column">
         <div className="profile">
           <Link to={"/"}>
@@ -59,6 +97,7 @@ const Header = () => {
                   icon={item.iconClass}
                   sectionId={item.sectionId}
                   sectionName={item.sectionName}
+                  onClick={handleToggleSideNavOpen}
                 />
               </li>
             ))}
@@ -76,18 +115,21 @@ interface ListItemProps {
   sectionId: string;
   sectionName: string;
   icon: string;
+  onClick: () => void;
 }
 
 const LinkListItem: React.FC<ListItemProps> = ({
   currentSection,
   sectionId,
   sectionName,
+  onClick,
   icon,
 }) => {
   return (
     <a
       href={`#${sectionId}`}
       className={currentSection === sectionId ? "active" : "nav-link scrollto"}
+      onClick={onClick}
     >
       <i className={icon}></i>{" "}
       <span className="nav-link-item">{sectionName}</span>

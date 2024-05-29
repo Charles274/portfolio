@@ -1,6 +1,10 @@
-const MobileNavToggle = () => {
+type MobileNavTogglePropes = {
+  onClick: () => void;
+};
+
+const MobileNavToggle: React.FC<MobileNavTogglePropes> = ({ onClick }) => {
   return (
-    <div className="">
+    <div onClick={onClick} className="">
       <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
     </div>
   );
