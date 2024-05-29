@@ -83,7 +83,10 @@ const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
 
             {workExperiences.map((workExperience, index) => (
               <div key={index} className="resume-item">
-                <WorkExperienceItem workItem={workExperience} />
+                <WorkExperienceItem
+                  showProjects={false}
+                  workItem={workExperience}
+                />
               </div>
             ))}
 
@@ -107,9 +110,13 @@ export const ResumeListItem = ({ item }: { item: string }) => {
 
 export interface Props {
   workItem: ResumeWorkItem;
+  showProjects: boolean;
 }
 
-export const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
+export const WorkExperienceItem: React.FC<Props> = ({
+  workItem,
+  showProjects,
+}) => {
   return (
     <>
       <h4>{workItem.position}</h4>
@@ -131,7 +138,8 @@ export const WorkExperienceItem: React.FC<Props> = ({ workItem }) => {
 
       {/* Optionally Show Projects */}
 
-      {workItem?.projects &&
+      {showProjects &&
+        workItem?.projects &&
         workItem?.projects?.map((project, index) => (
           <div key={index} className="text-justify mb-4">
             <p>

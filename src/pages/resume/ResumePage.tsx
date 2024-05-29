@@ -74,7 +74,9 @@ const ResumePage = () => {
                 <i className="bi bi-funnel "></i>
               </button>
               <a
-                href={"/"}
+                href={
+                  "src/data/documents/resume/Engr Charles CV (May 2024 - WEB DEV).pdf"
+                }
                 className="btn btn-sm btn-outline-light d-flex gap-2 align-items-center"
               >
                 {"Download CV"}
@@ -96,7 +98,10 @@ const ResumePage = () => {
                     .slice(0, shownExperiences.length / 4)
                     .map((workExperience, index) => (
                       <div key={index} className="resume-item">
-                        <WorkExperienceItem workItem={workExperience} />
+                        <WorkExperienceItem
+                          showProjects
+                          workItem={workExperience}
+                        />
                       </div>
                     ))}
                 </div>
@@ -109,7 +114,10 @@ const ResumePage = () => {
                     .slice(shownExperiences.length / 4)
                     .map((workExperience, index) => (
                       <div key={index} className="resume-item">
-                        <WorkExperienceItem workItem={workExperience} />
+                        <WorkExperienceItem
+                          showProjects
+                          workItem={workExperience}
+                        />
                       </div>
                     ))}
                 </div>
@@ -125,7 +133,10 @@ const ResumePage = () => {
               >
                 {shownExperiences.map((workExperience, index) => (
                   <div key={index} className="resume-item">
-                    <WorkExperienceItem workItem={workExperience} />
+                    <WorkExperienceItem
+                      showProjects
+                      workItem={workExperience}
+                    />
                   </div>
                 ))}
               </div>

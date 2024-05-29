@@ -43,19 +43,26 @@ export const WorkExperiences: ResumeWorkItem[] = [
     projects: [
       {
         id: 1,
-        title: "AGERMAX",
+        title: "AGERMAX - Artists Booking Platform [Hosted Live Already]",
         description:
           "Agermax Artists Booking Platform is a comprehensive web application built using Next.js 13. It serves as a centralized platform for artists to showcase their work and connect with potential clients for bookings. The platform offers an intuitive user interface, allowing artists to create profiles, upload portfolios, manage bookings, and interact with clients seamlessly. As the frontend developer on this project, I was responsible for implementing the user interface, ensuring responsiveness across devices, and optimizing performance and integrated the API Services. The backend stack comprises Express.js and MongoDB, providing robust data management and authentication functionalities. Additionally, I contributed to building administrative features for users with administrative rights, enhancing the platform's functionality and usability. Visit for your reference https://app.agermax.com.",
       },
       {
         id: 2,
-        title: "Maninjer Productivity Platform",
+        title: "Maninjer Productivity Platform - [Under Development]",
         description: `Developed the app front views and designs using Bootstrap, Typescript & AngularJS and also the app-back for the admin management system. Scripting for API Services and integration with Backend built with Django & PostgreSQL.
           Developed a comprehensive web-based productivity management platform designed to streamline various management systems with to promote efficiency across different domains. 
           The platform suits consists of Personal Management System: Goal setting, task management, calendar synchronization, and public interaction. 
           Hotel Management System: Reservation management, guest tracking, and personalized service interaction. Restaurant Management System: Menu management, order processing, and customer interaction. 
           Company Management System: Employee management, project tracking, and stakeholder communication. Association/Organization Management System: Member and event management, goal tracking, and public engagement. 
           Production Management System: Production scheduling, inventory tracking, and quality assurance.`,
+      },
+      {
+        id: 3,
+        title: "Personal Portfolio Website",
+        description: `A personal website that highlights some of the details about me and
+        showcases my skills and professional life. Built with React 19, Bootstrap and
+        Typescript. Visit for your reference https://charles-owusu.netlify.app`,
       },
     ],
   },
