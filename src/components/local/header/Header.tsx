@@ -22,16 +22,29 @@ const Header = () => {
             <a href="#" className="twitter">
               <i className="bi bi-twitter"></i>
             </a>
-            <a href="www.facebook.com/charles.n.owusu" className="facebook">
+            <a
+              href="https://www.facebook.com/charles.n.owusu"
+              className="facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="www.instagram.com.brother_charles" className="instagram">
+            <a
+              href="https://www.instagram.com/brother_charles"
+              className="instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="#" className="google-plus">
-              <i className="bi bi-skype"></i>
-            </a>
-            <a href="#" className="linkedin">
+
+            <a
+              href="https://www.linkedin.com/in/charles-owusu-903b3b120/"
+              className="linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-linkedin"></i>
             </a>
           </div>

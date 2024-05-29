@@ -11,7 +11,7 @@ type PortfolioSectionProps = {
 const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
   const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
 
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Web");
 
   const handleFilter: React.MouseEventHandler<HTMLLIElement> = (e) => {
     const value = e.currentTarget.id;

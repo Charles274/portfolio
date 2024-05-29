@@ -6,7 +6,7 @@ import { WorkExperienceItem } from "../homepage/components/resume-section/Resume
 
 const ResumePage = () => {
   const [shownExperiences, setShownExperiences] = useState(WorkExperiences);
-  const [resume, setResume] = useState("Web");
+  const [resume, setResume] = useState("All");
 
   const handleFilter: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const category = e.currentTarget.id;
@@ -42,7 +42,7 @@ const ResumePage = () => {
             </h6>
             <h3 className="resume-title ">Professional Experience</h3>
 
-            <div className="d-flex gap-2 justify-content-center mb-1">
+            <div className="d-flex gap-2 justify-content-center flex-wrap mb-1">
               <button
                 className={`btn btn-sm btn-outline-light d-flex gap-2 align-items-center ${
                   resume == "Web" && "active"
