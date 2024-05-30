@@ -5,9 +5,7 @@ const FactsSection = () => {
         <div className="section-title">
           <h2>Facts</h2>
           <p>
-            Get to know me in a nutshell! This section shares some interesting
-            facts and figures about my professional journey. Take a glance to
-            get a better sense of who I am and what I can bring to the table.
+            Get to know me in a nutshell! Some real quick interesting facts.
           </p>
         </div>
 
@@ -25,7 +23,7 @@ const FactsSection = () => {
                 className="purecounter"
               ></span>
               <p>
-                <strong>Happy Clients</strong> consequuntur quae
+                <strong>Happy: </strong> I'm a happy person. I spread around.
               </p>
             </div>
           </div>
@@ -44,7 +42,8 @@ const FactsSection = () => {
                 className="purecounter"
               ></span>
               <p>
-                <strong>Projects</strong> adipisci atque cum quia aut
+                <strong>Excellence: </strong> Pursuit of Excellence is how I
+                live.
               </p>
             </div>
           </div>
@@ -63,7 +62,8 @@ const FactsSection = () => {
                 className="purecounter"
               ></span>
               <p>
-                <strong>Hours Of Support</strong> aut commodi quaerat
+                <strong>Reliable</strong> You can count on me, any time, any
+                day!
               </p>
             </div>
           </div>
@@ -82,7 +82,8 @@ const FactsSection = () => {
                 className="purecounter"
               ></span>
               <p>
-                <strong>Hard Workers</strong> rerum asperiores dolor
+                <strong>Learner: </strong> Forever addicted to continuous
+                growth.
               </p>
             </div>
           </div>
