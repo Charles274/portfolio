@@ -98,10 +98,10 @@ export const ContactForm = () => {
     message: "",
   });
 
-  const handleChangeFormData = (e) => {
-    const updatedFormData = { ...formData };
-    setFormData(updatedFormData);
-  };
+  // const handleChangeFormData = (e) => {
+  //   const updatedFormData = { ...formData };
+  //   setFormData(updatedFormData);
+  // };
 
   return (
     <form method="post" role="form" className="contact-form" netlify>
@@ -116,7 +116,6 @@ export const ContactForm = () => {
             id="name"
             value={formData.name}
             required
-            onChange={handleChangeFormData}
           />
         </div>
       </div>
@@ -132,7 +131,6 @@ export const ContactForm = () => {
             id="phone"
             required
             value={formData.phone}
-            onChange={handleChangeFormData}
           />
         </div>
         {/* Email */}
@@ -144,7 +142,6 @@ export const ContactForm = () => {
             name="email"
             id="email"
             value={formData.email}
-            onChange={handleChangeFormData}
             required
           />
         </div>
@@ -161,7 +158,6 @@ export const ContactForm = () => {
           id="subject"
           required
           value={formData.message}
-          onChange={handleChangeFormData}
         />
       </div>
 
