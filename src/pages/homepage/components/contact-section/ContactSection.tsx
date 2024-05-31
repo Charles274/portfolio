@@ -114,7 +114,7 @@ export const ContactForm = () => {
             name="name"
             className="form-control"
             id="name"
-            value={formData.name}
+            // value={formData.name}
             required
           />
         </div>
@@ -130,7 +130,7 @@ export const ContactForm = () => {
             name="phone"
             id="phone"
             required
-            value={formData.phone}
+            // value={formData.phone}
           />
         </div>
         {/* Email */}
@@ -141,7 +141,7 @@ export const ContactForm = () => {
             className="form-control form-control-sm"
             name="email"
             id="email"
-            value={formData.email}
+            // value={formData.email}
             required
           />
         </div>
@@ -157,7 +157,7 @@ export const ContactForm = () => {
           name="subject"
           id="subject"
           required
-          value={formData.message}
+          // value={formData.message}
         />
       </div>
 
