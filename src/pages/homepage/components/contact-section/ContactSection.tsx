@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const ContactSection = () => {
   const whatsappNumber = "+233544803023";
   const message = "Hello, I'm interested in your portfolio!";
@@ -82,22 +80,14 @@ const ContactSection = () => {
 
 export default ContactSection;
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-}
+// interface FormData {
+//   name: string;
+//   email: string;
+//   phone: string;
+//   subject: string;
+//   message: string;
+// }
 export const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
   // const handleChangeFormData = (e) => {
   //   const updatedFormData = { ...formData };
   //   setFormData(updatedFormData);
