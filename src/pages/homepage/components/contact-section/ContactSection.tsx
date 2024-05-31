@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const ContactSection = () => {
   const whatsappNumber = "+233544803023";
   const message = "Hello, I'm interested in your portfolio!";
@@ -68,88 +70,7 @@ const ContactSection = () => {
                 Or Send Me A Quick Message From Here.
               </div>
               <div className="card-body">
-                <form
-                  action="#"
-                  method="post"
-                  role="form"
-                  className="contact-form"
-                >
-                  {/* Name */}
-                  <div className="row">
-                    <div className="form-group col-md-12">
-                      <label htmlFor="name">Your Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        className="form-control"
-                        id="name"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    {/* Phone */}
-                    <div className="form-group col-md-6">
-                      <label htmlFor="name">Your Phone</label>
-                      <input
-                        type="phone"
-                        className="form-control form-control-sm"
-                        name="phone"
-                        id="phone"
-                        required
-                      />
-                    </div>
-                    {/* Email */}
-                    <div className="form-group col-md-6">
-                      <label htmlFor="name">Your Email</label>
-                      <input
-                        type="email"
-                        className="form-control form-control-sm"
-                        name="email"
-                        id="email"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  {/* Subject */}
-
-                  <div className="form-group">
-                    <label htmlFor="name">Subject</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="subject"
-                      id="subject"
-                      required
-                    />
-                  </div>
-
-                  {/* Message */}
-
-                  <div className="form-group">
-                    <label htmlFor="name">Message</label>
-                    <textarea
-                      className="form-control"
-                      name="message"
-                      rows={10}
-                      required
-                    ></textarea>
-                  </div>
-                  <div className="my-3">
-                    <div className="loading">Loading</div>
-                    <div className="error-message"></div>
-                    <div className="sent-message">
-                      Your message has been sent. Thank you!
-                    </div>
-                  </div>
-                  <div className="text-center ">
-                    <button className="card-footer" type="submit">
-                      Send Message
-                    </button>
-                  </div>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -160,3 +81,113 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+export const ContactForm = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChangeFormData = (e) => {
+    const updatedFormData = { ...formData };
+    setFormData(updatedFormData);
+  };
+
+  return (
+    <form method="post" role="form" className="contact-form" netlify>
+      {/* Name */}
+      <div className="row">
+        <div className="form-group col-md-12">
+          <label htmlFor="name">Your Name</label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            id="name"
+            value={formData.name}
+            required
+            onChange={handleChangeFormData}
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        {/* Phone */}
+        <div className="form-group col-md-6">
+          <label htmlFor="name">Your Phone</label>
+          <input
+            type="tel"
+            className="form-control form-control-sm"
+            name="phone"
+            id="phone"
+            required
+            value={formData.phone}
+            onChange={handleChangeFormData}
+          />
+        </div>
+        {/* Email */}
+        <div className="form-group col-md-6">
+          <label htmlFor="name">Your Email</label>
+          <input
+            type="email"
+            className="form-control form-control-sm"
+            name="email"
+            id="email"
+            value={formData.email}
+            onChange={handleChangeFormData}
+            required
+          />
+        </div>
+      </div>
+
+      {/* Subject */}
+
+      <div className="form-group">
+        <label htmlFor="name">Subject</label>
+        <input
+          type="text"
+          className="form-control"
+          name="subject"
+          id="subject"
+          required
+          value={formData.message}
+          onChange={handleChangeFormData}
+        />
+      </div>
+
+      {/* Message */}
+
+      <div className="form-group">
+        <label htmlFor="name">Message</label>
+        <textarea
+          className="form-control"
+          name="message"
+          rows={10}
+          required
+        ></textarea>
+      </div>
+      <div className="my-3">
+        <div className="loading">Loading</div>
+        <div className="error-message"></div>
+        <div className="sent-message">
+          Your message has been sent. Thank you!
+        </div>
+      </div>
+      <div className="text-center ">
+        <button className="card-footer" type="submit">
+          Send Message
+        </button>
+      </div>
+    </form>
+  );
+};
