@@ -104,7 +104,12 @@ export const ContactForm = () => {
   // };
 
   return (
-    <form method="post" role="form" className="contact-form" netlify>
+    <form
+      method="post"
+      role="form"
+      className="contact-form"
+      data-netlify="true"
+    >
       {/* Name */}
       <div className="row">
         <div className="form-group col-md-12">

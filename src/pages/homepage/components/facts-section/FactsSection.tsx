@@ -23,7 +23,8 @@ const FactsSection = () => {
                 className="purecounter"
               ></span>
               <p>
-                <strong>Happy: </strong> I'm a happy person. I spread around.
+                <strong>Happy: </strong> I'm a happy person. I spread happiness
+                too.
               </p>
             </div>
           </div>
