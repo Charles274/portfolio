@@ -99,7 +99,10 @@ export const ContactForm = () => {
       role="form"
       className="contact-form"
       data-netlify="true"
+      name="contact"
     >
+      <input type="hidden" name="form-name" value="contact" />
+
       {/* Name */}
       <div className="row">
         <div className="form-group col-md-12">
