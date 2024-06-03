@@ -95,11 +95,11 @@ export const ContactForm = () => {
 
   return (
     <form
-      method="POST"
       role="form"
       className="contact-form"
       data-netlify="true"
       name="contact"
+      method="POST"
     >
       <input type="hidden" name="form-name" value="contact" />
 

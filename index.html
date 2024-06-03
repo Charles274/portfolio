@@ -21,6 +21,88 @@
     <title>Charlie's</title>
   </head>
   <body>
+    <form
+      role="form"
+      className="contact-form"
+      data-netlify="true"
+      name="contact"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+
+      {/* Name */}
+      <div className="row">
+        <div className="form-group col-md-12">
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            id="name"
+            value="{formData.name}"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        {/* Phone */}
+        <div className="form-group col-md-6">
+          <input
+            type="tel"
+            className="form-control form-control-sm"
+            name="phone"
+            id="phone"
+            required
+            value="{formData.phone}"
+          />
+        </div>
+        {/* Email */}
+        <div className="form-group col-md-6">
+          <input
+            type="email"
+            className="form-control form-control-sm"
+            name="email"
+            id="email"
+            value="{formData.email}"
+            required
+          />
+        </div>
+      </div>
+
+      {/* Subject */}
+
+      <div className="form-group">
+        <input
+          type="text"
+          className="form-control"
+          name="subject"
+          id="subject"
+          required
+          value="{formData.message}"
+        />
+      </div>
+
+      {/* Message */}
+
+      <div className="form-group">
+        <textarea
+          className="form-control"
+          name="message"
+          rows="{10}"
+          required
+        ></textarea>
+      </div>
+      <div className="my-3">
+        <div className="loading">Loading</div>
+        <div className="error-message"></div>
+        <div className="sent-message">
+          Your message has been sent. Thank you!
+        </div>
+      </div>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Template Main JS File -->
