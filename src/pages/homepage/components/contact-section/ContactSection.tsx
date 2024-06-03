@@ -95,7 +95,7 @@ export const ContactForm = () => {
 
   return (
     <form
-      method="post"
+      method="POST"
       role="form"
       className="contact-form"
       data-netlify="true"
