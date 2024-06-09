@@ -91,7 +91,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
                 className="col-lg-4 col-md-6 portfolio-item filter-app mb-4"
               >
                 <PortfolioCard
-                  img={item.img}
+                  images={item.images}
                   title={item.title}
                   category={item.category}
                   tags={item.tags}
@@ -111,7 +111,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
 export default PortfolioSection;
 
 export const PortfolioCard = ({
-  img,
+  images: img,
   title,
   category,
   tags,
@@ -159,7 +159,7 @@ export const PortfolioCard = ({
       </div>
       <img
         src={`/images/portfolio/${img ? img[0] : ""}`}
-        className="img-fluid mt-3"
+        className="portfolio-card-image mt-3"
         alt=""
       />
       <div className="user-actions-container d-flex justify-content-between mt-3">

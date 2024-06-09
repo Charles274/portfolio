@@ -639,9 +639,9 @@ section {
   color: var(--main-font-color);
 }
 
-.portfolio .portfolio-wrap .img-fluid {
+.portfolio .portfolio-wrap .portfolio-card-image {
   border-radius: inherit;
-  height: 150px;
+  height: 200px;
 }
 /* .portfolio-tag-container {
 
@@ -776,6 +776,10 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+}
+
+.project-carousel .project-image {
+  height: 500px;
 }
 
 /*--------------------------------------------------------------

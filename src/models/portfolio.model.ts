@@ -3,7 +3,7 @@ export interface PortfolioItem {
   title?: string;
   category?: Category;
   description?: string;
-  img?: string[];
+  images?: string[];
   tags?: string[]; // for filtering
   projectUrl?: string;
   projectStartDate: Date;

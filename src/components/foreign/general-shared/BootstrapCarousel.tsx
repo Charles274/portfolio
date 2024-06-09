@@ -12,17 +12,17 @@ function BootstrapCarousel({
   description,
 }: BootstrapCarouselProps) {
   return (
-    <Carousel>
+    <Carousel className="project-carousel">
       {images?.map((img) => (
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 project-image"
             src={`/images/portfolio/${img}`}
             alt={title}
           />
           <Carousel.Caption>
-            <h3>{title}</h3>
-            <p>{description}</p>
+            {/* <h3>{title}</h3>
+            <p>{description}</p> */}
           </Carousel.Caption>
         </Carousel.Item>
       ))}

@@ -93,7 +93,7 @@ export const SlickPortfolioCarousel: React.FC<ReactSlickCarouselProps> = ({
           className="col-lg-4 col-md-6 portfolio-item filter-app"
         >
           <PortfolioCard
-            img={item.img}
+            images={item.images}
             title={item.title}
             category={item.category}
             tags={item.tags}

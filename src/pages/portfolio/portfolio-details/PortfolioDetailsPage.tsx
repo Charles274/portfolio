@@ -15,7 +15,10 @@ const PortfolioDetailsPage: React.FC = () => {
           <div className="row gy-4">
             <div className="col-lg-8">
               {/* //Carousel */}
-              <BootstrapCarousel images={project?.img} title={project?.title} />
+              <BootstrapCarousel
+                images={project?.images}
+                title={project?.title}
+              />
             </div>
 
             <div className="col-lg-4">
@@ -23,7 +26,7 @@ const PortfolioDetailsPage: React.FC = () => {
                 <h3>Project information</h3>
                 <ul>
                   <li>
-                    <strong>Category</strong>: {project?.category.name}
+                    <strong>Category</strong>: {project?.category?.name}
                   </li>
                   <li>
                     <strong>Client</strong>: {project?.client}
