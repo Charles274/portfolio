@@ -3,6 +3,7 @@ import { AllProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
 import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
 import { Link } from "react-router-dom";
+import { getMonthYear } from "../../../../utils/DateFormatter";
 
 type PortfolioSectionProps = {
   layoutConfig: "carousel" | "grid";
@@ -57,7 +58,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
               <li
                 className={filter === "Web" ? "filter-active" : ""}
                 data-filter=".filter-app"
-                id="Web"
+                id="Web Development"
                 onClick={handleFilter}
               >
                 Web Apps
@@ -65,7 +66,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
               <li
                 className={filter === "Civil" ? "filter-active" : ""}
                 data-filter=".filter-card"
-                id="Civil"
+                id="Civil Engineering"
                 onClick={handleFilter}
               >
                 Civil
@@ -119,12 +120,6 @@ export const PortfolioCard = ({
   projectStartDate,
   projectEndDate,
 }: PortfolioItem) => {
-  const getMonthYear = (date: Date): string => {
-    return `${date.toLocaleString("en-us", {
-      month: "short",
-    })} ${date.getFullYear()}`;
-  };
-
   return (
     <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3 m-2">
       <div className="portfolio-header d-flex justify-content-between">

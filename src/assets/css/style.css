@@ -754,7 +754,7 @@ section {
   border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.portfolio-details .portfolio-info ul:not(.list-styled) {
   list-style: none;
   padding: 0;
   font-size: 15px;
@@ -779,7 +779,8 @@ section {
 }
 
 .project-carousel .project-image {
-  height: 500px;
+  height: 450px;
+  aspect-ratio: 1;
 }
 
 /*--------------------------------------------------------------

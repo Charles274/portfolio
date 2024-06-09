@@ -2,13 +2,26 @@ export interface PortfolioItem {
   id: number;
   title?: string;
   category?: Category;
-  description?: string;
+  location?: string;
+  brief?: string;
+  consultant?: string;
+  description?: ProjectDescription;
+  contractor?: string;
+  position?: string;
   images?: string[];
   tags?: string[]; // for filtering
   projectUrl?: string;
   projectStartDate: Date;
   projectEndDate: Date;
   client?: string;
+}
+
+export interface ProjectDescription {
+  introduction?: string;
+  key_responsibilities?: string[];
+  conclusion?: string;
+  collaboration?: string;
+  key_features?: string[];
 }
 
 export interface Category {
@@ -18,8 +31,8 @@ export interface Category {
 
 export enum CategoryName {
   All = "All",
-  Web = "Web",
-  Civil = "Civil",
+  Web = "Web Development",
+  Civil = "Civil Engineering",
 }
 
 //Categories
