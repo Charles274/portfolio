@@ -98,6 +98,8 @@ export const SlickPortfolioCarousel: React.FC<ReactSlickCarouselProps> = ({
             category={item.category}
             tags={item.tags}
             id={item.id}
+            projectStartDate={item.projectStartDate}
+            projectEndDate={item.projectEndDate}
           />
         </div>
       ))}

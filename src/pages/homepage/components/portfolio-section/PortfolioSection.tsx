@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PortfolioProjects } from "../../../../data/projects/Projects.model";
+import { AllProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
 import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
 import { Link } from "react-router-dom";
@@ -9,20 +9,20 @@ type PortfolioSectionProps = {
 };
 
 const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
-  const [projects, setProjects] = useState<PortfolioItem[]>(PortfolioProjects);
+  const [projects, setProjects] = useState<PortfolioItem[]>(AllProjects);
 
   const [filter, setFilter] = useState("Web");
 
   const handleFilter: React.MouseEventHandler<HTMLLIElement> = (e) => {
     const value = e.currentTarget.id;
     setProjects(
-      PortfolioProjects.filter((project) => project.category?.name === value)
+      AllProjects.filter((project) => project.category?.name === value)
     );
     setFilter(value);
   };
 
   const handleResetFilter = () => {
-    setProjects(PortfolioProjects);
+    setProjects(AllProjects);
     setFilter("All");
   };
 
@@ -96,6 +96,8 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
                   category={item.category}
                   tags={item.tags}
                   id={item.id}
+                  projectStartDate={item.projectStartDate}
+                  projectEndDate={item.projectEndDate}
                 />
               </div>
             ))}
@@ -114,7 +116,15 @@ export const PortfolioCard = ({
   category,
   tags,
   id,
+  projectStartDate,
+  projectEndDate,
 }: PortfolioItem) => {
+  const getMonthYear = (date: Date): string => {
+    return `${date.toLocaleString("en-us", {
+      month: "short",
+    })} ${date.getFullYear()}`;
+  };
+
   return (
     <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3 m-2">
       <div className="portfolio-header d-flex justify-content-between">
@@ -144,7 +154,8 @@ export const PortfolioCard = ({
         ))}
       </div>
       <div className="portfolio-publish-date">
-        {new Date().toLocaleDateString()}
+        {getMonthYear(projectStartDate)} -{" "}
+        {projectEndDate ? getMonthYear(projectEndDate) : "Ongoing"}
       </div>
       <img
         src={`/images/portfolio/${img ? img[0] : ""}`}

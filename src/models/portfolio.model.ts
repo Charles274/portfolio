@@ -1,13 +1,13 @@
 export interface PortfolioItem {
   id: number;
   title?: string;
-  category: Category;
+  category?: Category;
   description?: string;
   img?: string[];
   tags?: string[]; // for filtering
   projectUrl?: string;
-  projectStartDate?: Date;
-  projectEndDate?: Date;
+  projectStartDate: Date;
+  projectEndDate: Date;
   client?: string;
 }
 

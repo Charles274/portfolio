@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { PortfolioProjects } from "../../../data/projects/Projects.model";
+import { AllProjects } from "../../../data/projects/Projects.model";
 import BootstrapCarousel from "../../../components/foreign/general-shared/BootstrapCarousel";
 
 const PortfolioDetailsPage: React.FC = () => {
   const { portfolioId } = useParams<{ portfolioId: string }>();
   const id = Number(portfolioId);
-  const project = PortfolioProjects.find((proj) => proj.id == id);
+  const project = AllProjects.find((proj) => proj.id == id);
   console.log(project);
 
   return (
