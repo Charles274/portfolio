@@ -6,11 +6,7 @@ type BootstrapCarouselProps = {
   description?: string;
 };
 
-function BootstrapCarousel({
-  images,
-  title,
-  description,
-}: BootstrapCarouselProps) {
+function BootstrapCarousel({ images, title }: BootstrapCarouselProps) {
   return (
     <Carousel className="project-carousel">
       {images?.map((img) => (
