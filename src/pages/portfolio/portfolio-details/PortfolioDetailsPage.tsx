@@ -55,6 +55,9 @@ const PortfolioDetailsPage: React.FC = () => {
                       getMonthYear(project.projectEndDate)}
                   </li>
                   <li>
+                    <strong>Project Status</strong>: {project?.status}
+                  </li>
+                  <li>
                     <strong>Project URL</strong>:{" "}
                     <a href={project?.projectUrl}>{project?.projectUrl}</a>
                   </li>

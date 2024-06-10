@@ -14,6 +14,7 @@ export interface PortfolioItem {
   projectStartDate: Date;
   projectEndDate: Date;
   client?: string;
+  status?: ProjectStatus;
 }
 
 export interface ProjectDescription {
@@ -45,3 +46,9 @@ export const CivilCategory: Category = {
   name: CategoryName.Civil,
   iconClass: "bi bi-building",
 };
+
+export enum ProjectStatus {
+  Complete = "Complete",
+  Hold = "On Hold",
+  Ongoing = "Ongoing",
+}

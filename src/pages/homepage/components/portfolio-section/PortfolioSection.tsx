@@ -12,7 +12,7 @@ type PortfolioSectionProps = {
 const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
   const [projects, setProjects] = useState<PortfolioItem[]>(AllProjects);
 
-  const [filter, setFilter] = useState("Web");
+  const [filter, setFilter] = useState("All");
 
   const handleFilter: React.MouseEventHandler<HTMLLIElement> = (e) => {
     const value = e.currentTarget.id;
@@ -56,7 +56,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
                 All
               </li>
               <li
-                className={filter === "Web" ? "filter-active" : ""}
+                className={filter === "Web Development" ? "filter-active" : ""}
                 data-filter=".filter-app"
                 id="Web Development"
                 onClick={handleFilter}
@@ -64,7 +64,9 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
                 Web Apps
               </li>
               <li
-                className={filter === "Civil" ? "filter-active" : ""}
+                className={
+                  filter === "Civil Engineering" ? "filter-active" : ""
+                }
                 data-filter=".filter-card"
                 id="Civil Engineering"
                 onClick={handleFilter}

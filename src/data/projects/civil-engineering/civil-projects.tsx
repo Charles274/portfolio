@@ -1,4 +1,8 @@
-import { CivilCategory, PortfolioItem } from "../../../models/portfolio.model";
+import {
+  CivilCategory,
+  PortfolioItem,
+  ProjectStatus,
+} from "../../../models/portfolio.model";
 
 export const CivilProjects: PortfolioItem[] = [
   {
@@ -31,6 +35,7 @@ export const CivilProjects: PortfolioItem[] = [
     location: "Assin Fosu - Assin Praso - Kumasi Road, C/R, Ghana",
     client: "Government of Ghana",
     contractor: "Shimizu Dainippon Joint Ventures - Shimizu Coorporation",
+    status: ProjectStatus.Complete,
     description: {
       introduction:
         "The Rehabilitation of N8 Road, Assin Fosu - Assin Praso [Phase II] project stands as a testament to the commitment of Shimizu Dainipon Joint Ventures (SDJV), Shimizu Corporation, towards enhancing infrastructure in Assin - Fosu to Assin Praso, Central Region, Ghana. This Civil Engineering Project focused on the improvement of the Asphalt Pavement and the Construction of a Box Culvert for a Railway underpass, addressing key transportation challenges in the area.",
@@ -49,12 +54,6 @@ export const CivilProjects: PortfolioItem[] = [
       conclusion:
         "The Rehabilitation of N8 Road, Assin Fosu - Assin Praso [Phase II] project exemplifies excellence in civil engineering and infrastructure development. Through meticulous planning, dedicated teamwork, and a commitment to quality, this project underscores the transformative impact of strategic infrastructure initiatives on the socio-economic fabric of the region.",
     },
-
-    //     `The Rehabilitation of N8 Road, Assin Fosu - Assin Praso [Phase II] project stands as a testament to the commitment of Shimizu Dainipon Joint Ventures (SDJV), Shimizu Corporation, towards enhancing infrastructure in the region. This civil engineering project focused on the improvement of the asphalt pavement and the construction of a box culvert for a railway underpass, addressing key transportation challenges in the area.
-    //     Collaboration and Impact: Critical aspects of the project involved liaising with consultants, sub-contractors, supervisors, planners, designers, surveyors, and the general workforce to foster a collaborative environment. By upholding the highest standards of safety and quality, we ensured that the rehabilitation of N8 Road proceeded smoothly, benefiting the local community and enhancing transportation infrastructure in the region.
-
-    // Conclusion: The Rehabilitation of N8 Road, Assin Fosu - Assin Praso [Phase II] project exemplifies excellence in civil engineering and infrastructure development. Through meticulous planning, dedicated teamwork, and a commitment to quality, this project underscores the transformative impact of strategic infrastructure initiatives on the socio-economic fabric of the region.
-    //     `
   },
   {
     id: 6,
