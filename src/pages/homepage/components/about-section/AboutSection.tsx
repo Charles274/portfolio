@@ -21,10 +21,7 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Frontend Web Developer &amp; Civil Engineer.</h3>
-            <p className="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p className="fst-italic">Find a quick overview of who I am.</p>
             <div className="row">
               <div className="col-lg-6">
                 <ul>
