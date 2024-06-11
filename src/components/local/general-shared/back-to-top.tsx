@@ -1,16 +1,40 @@
-import { useActiveSection } from "../../../hooks/useActiveSection";
+import { useEffect, useState } from "react";
 
 const BackToTop = () => {
-  const { currentSection } = useActiveSection();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <a
-      href="#hero"
-      style={{ opacity: currentSection === "hero" ? "0" : "1" }}
-      className="back-to-top d-flex align-items-center justify-content-center"
+    <button
+      onClick={scrollToTop}
+      className={`back-to-top d-flex align-items-center justify-content-center ${
+        isVisible ? "active" : ""
+      }`}
     >
       <i className="bi bi-arrow-up-short"></i>
-    </a>
+    </button>
   );
 };
 
