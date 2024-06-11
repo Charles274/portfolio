@@ -4,12 +4,22 @@ import { PortfolioItem } from "../../../../models/portfolio.model";
 import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
 import { Link } from "react-router-dom";
 import { getMonthYear } from "../../../../utils/DateFormatter";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 type PortfolioSectionProps = {
   layoutConfig: "carousel" | "grid";
 };
 
 const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration
+      once: true, // Only animate once
+    });
+  }, []);
+
   const [projects, setProjects] = useState<PortfolioItem[]>(AllProjects);
 
   const [filter, setFilter] = useState("All");
@@ -28,11 +38,16 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
   };
 
   return (
-    <section id="portfolio" className="portfolio section-bg">
+    <section
+      id="portfolio"
+      className="portfolio section-bg"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
       <div className="container">
         <div className="section-title">
           <h2>Portfolio</h2>
-          <p>
+          <p data-aos="fade-up">
             Welcome to My Portfolio. This is a showcase of some of my best work,
             featuring projects that demonstrate my skills and expertise. From
             Software to Civil Engineering, I've curated a selection of pieces
@@ -41,7 +56,7 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
           </p>
         </div>
 
-        <div className="row" data-aos="fade-up">
+        <div className="row">
           <div className="d-flex justify-content-end">
             <Link to={"/portfolio"}>See All</Link>
           </div>
