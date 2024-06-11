@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type SeeMoreButtonProps = {
   path: string;
   text: string;
@@ -10,14 +12,14 @@ const SeeMoreButton: React.FC<SeeMoreButtonProps> = ({
   visibility,
 }) => {
   return (
-    <a
-      href={path}
+    <Link
+      to={path}
       className="btn btn-outline-light d-flex gap-2 align-items-center"
       style={{ visibility: visibility }}
     >
       {text}
       <i className="bi bi-box-arrow-up-right"></i>
-    </a>
+    </Link>
   );
 };
 

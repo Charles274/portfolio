@@ -11,6 +11,7 @@ export const BreadCrumbsNav = () => {
   const crumbs = location.pathname
     .split("/")
     .filter((crumb) => crumb !== "" && !dynamicParams.includes(crumb))
+    .slice(0, 1)
     .map((crumb) => {
       currentLink += `/${crumb}`;
 

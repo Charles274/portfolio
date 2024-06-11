@@ -8,16 +8,16 @@ interface ResumeProps {
 }
 
 const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
-  const [showAll] = useState<boolean>(displayAll);
+  const [showAllResumeDetails] = useState<boolean>(displayAll);
   const [workExperiences, setWorkExperiences] = useState<ResumeWorkItem[]>([]);
 
   useEffect(() => {
-    if (!showAll) {
+    if (!showAllResumeDetails) {
       setWorkExperiences(WorkExperiences.slice(0, 1));
       return;
     }
     setWorkExperiences(WorkExperiences);
-  }, [displayAll, showAll]);
+  }, [displayAll, showAllResumeDetails]);
 
   return (
     <section id="resume" className="resume text-justify">
@@ -90,7 +90,7 @@ const ResumeSection: React.FC<ResumeProps> = ({ displayAll = false }) => {
               </div>
             ))}
 
-            {!showAll && (
+            {!showAllResumeDetails && (
               <div className="d-flex justify-content-end">
                 <SeeMoreButton text="Read Full Resume" path="/resume" />
               </div>

@@ -57,9 +57,11 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
         </div>
 
         <div className="row">
-          <div className="d-flex justify-content-end">
-            <Link to={"/portfolio"}>See All</Link>
-          </div>
+          {layoutConfig === "carousel" && (
+            <div className="d-flex justify-content-end">
+              <Link to={"/portfolio"}>See All</Link>
+            </div>
+          )}
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
               <li
@@ -144,12 +146,12 @@ export const PortfolioCard = ({
           <i className={category?.iconClass}></i>
         </div>
         <div className="portfolio-project-options d-flex gap-3">
-          <a
-            href={`/portfolio/${id}/details`}
+          <Link
+            to={`/portfolio/${id}/details`}
             className="btn  btn-outline-light d-flex gap-2 align-items-center"
           >
             Read Post<i className="bi bi-box-arrow-up-right"></i>
-          </a>
+          </Link>
           <div className="dropdown">
             <i className="bi bi-three-dots-vertical"></i>
           </div>
