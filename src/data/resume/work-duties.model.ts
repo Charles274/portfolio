@@ -26,7 +26,7 @@ export const WorkExperiences: ResumeWorkItem[] = [
     category: CategoryName.Web,
     duties: [
       "Designed and developed responsive and interactive user interfaces for web applications",
-      "Implemented front-end logic using JavaScript, Typescript, HTML, CSS, and frameworks like React or Angular",
+      "Implemented front-end logic using JavaScript, Typescript, HTML, CSS, and frameworks like React, NextJs and Angular",
       "Created reusable UI components and maintained a consistent design language",
       "Collaborated with backend developers to integrate frontend code with APIs and backend services",
       "Troubleshot and debugged frontend issues using browser dev tools and debugging techniques",
