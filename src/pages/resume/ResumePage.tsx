@@ -5,30 +5,12 @@ import { WorkExperiences } from "../../data/resume/work-duties.model";
 import { WorkExperienceItem } from "../homepage/components/resume-section/ResumeSection";
 
 const ResumePage = () => {
-  const [shownExperiences, setShownExperiences] = useState(WorkExperiences);
+  const [shownExperiences] = useState(WorkExperiences);
   const [resume, setResume] = useState("All");
 
   const handleFilter: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const category = e.currentTarget.id;
-
-    if (category === "All") {
-      setResume("All");
-      setShownExperiences(WorkExperiences);
-      return;
-    }
-
-    if (category === "Web") {
-      setResume(category);
-    }
-
-    if (category === "Civil") {
-      setResume("Civil");
-    }
-
-    const filteredExperiences = WorkExperiences.filter(
-      (exp) => exp.category === category
-    );
-    setShownExperiences(filteredExperiences);
+    setResume(category);
   };
 
   return (
@@ -45,9 +27,9 @@ const ResumePage = () => {
             <div className="d-flex gap-2 justify-content-center flex-wrap mb-1">
               <button
                 className={`btn btn-sm btn-outline-light d-flex gap-2 align-items-center ${
-                  resume == "Web" && "active"
+                  resume == "Web Development" && "active"
                 }`}
-                id="Web"
+                id="Web Development"
                 onClick={handleFilter}
               >
                 {"Filter Frontend Developer"}
@@ -55,9 +37,9 @@ const ResumePage = () => {
               </button>
               <button
                 className={`btn btn-sm btn-outline-light d-flex gap-2 align-items-center ${
-                  resume == "Civil" && "active"
+                  resume == "Civil Engineering" && "active"
                 }`}
-                id="Civil"
+                id="Civil Engineering"
                 onClick={handleFilter}
               >
                 {"Filter Civil Engineer"}
@@ -86,16 +68,76 @@ const ResumePage = () => {
           </div>
 
           <div className="row">
-            {/* //If Not Web Category, Render this */}
-            {resume != "Web" && (
+            {/* //Display 2 Columns for All*/}
+            {resume == "All" && (
               <>
                 <div
                   className="col-lg-6"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {shownExperiences
-                    .slice(0, shownExperiences.length / 4)
+                  {WorkExperiences.slice(0, WorkExperiences.length / 4).map(
+                    (workExperience, index) => (
+                      <div key={index} className="resume-item">
+                        <WorkExperienceItem
+                          showProjects
+                          workItem={workExperience}
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+                <div
+                  className="col-lg-6"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {WorkExperiences.slice(WorkExperiences.length / 4).map(
+                    (workExperience, index) => (
+                      <div key={index} className="resume-item">
+                        <WorkExperienceItem
+                          showProjects
+                          workItem={workExperience}
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+              </>
+            )}
+
+            {/* //Display Single Column for Web Category */}
+            {resume == "Web Development" && (
+              <div
+                className="col-lg-12"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {shownExperiences
+                  .filter((exp) => exp.category === "Web Development")
+                  .map((workExperience, index) => (
+                    <div key={index} className="resume-item">
+                      <WorkExperienceItem
+                        showProjects
+                        workItem={workExperience}
+                      />
+                    </div>
+                  ))}
+              </div>
+            )}
+
+            {/* //Display 2 Columns for All*/}
+            {resume == "Civil Engineering" && (
+              <>
+                <div
+                  className="col-lg-6"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  {WorkExperiences.filter(
+                    (exp) => exp.category === "Civil Engineering"
+                  )
+                    .slice(0, WorkExperiences.length / 4)
                     .map((workExperience, index) => (
                       <div key={index} className="resume-item">
                         <WorkExperienceItem
@@ -110,8 +152,10 @@ const ResumePage = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {shownExperiences
-                    .slice(shownExperiences.length / 4)
+                  {WorkExperiences.filter(
+                    (exp) => exp.category === "Civil Engineering"
+                  )
+                    .slice(WorkExperiences.length / 4)
                     .map((workExperience, index) => (
                       <div key={index} className="resume-item">
                         <WorkExperienceItem
@@ -122,24 +166,6 @@ const ResumePage = () => {
                     ))}
                 </div>
               </>
-            )}
-
-            {/* //Display Single Column for Web Category */}
-            {resume == "Web" && (
-              <div
-                className="col-lg-12"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                {shownExperiences.map((workExperience, index) => (
-                  <div key={index} className="resume-item">
-                    <WorkExperienceItem
-                      showProjects
-                      workItem={workExperience}
-                    />
-                  </div>
-                ))}
-              </div>
             )}
           </div>
         </div>
