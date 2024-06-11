@@ -5,12 +5,17 @@ import { WorkExperiences } from "../../data/resume/work-duties.model";
 import { WorkExperienceItem } from "../homepage/components/resume-section/ResumeSection";
 
 const ResumePage = () => {
-  const [shownExperiences] = useState(WorkExperiences);
+  const [shownExperiences, setShownExperiences] = useState(WorkExperiences);
   const [resume, setResume] = useState("All");
 
   const handleFilter: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const category = e.currentTarget.id;
     setResume(category);
+    if (category === "All") return setShownExperiences(WorkExperiences);
+    const filteredResults = shownExperiences.filter(
+      (exp) => exp.category === category
+    );
+    setShownExperiences(filteredResults);
   };
 
   return (
@@ -52,7 +57,7 @@ const ResumePage = () => {
                 id="All"
                 onClick={handleFilter}
               >
-                {"See All"}
+                See All
                 <i className="bi bi-funnel "></i>
               </button>
               <a
@@ -61,7 +66,7 @@ const ResumePage = () => {
                 }
                 className="btn btn-sm btn-outline-light d-flex gap-2 align-items-center"
               >
-                {"Download CV"}
+                Download CV
                 <i className="bi bi-box-arrow-down"></i>
               </a>
             </div>
@@ -69,52 +74,11 @@ const ResumePage = () => {
 
           <div className="row">
             {/* //Display 2 Columns for All*/}
-            {resume == "All" && (
-              <>
-                <div
-                  className="col-lg-6"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {WorkExperiences.slice(0, WorkExperiences.length / 4).map(
-                    (workExperience, index) => (
-                      <div key={index} className="resume-item">
-                        <WorkExperienceItem
-                          showProjects
-                          workItem={workExperience}
-                        />
-                      </div>
-                    )
-                  )}
-                </div>
-                <div
-                  className="col-lg-6"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  {WorkExperiences.slice(WorkExperiences.length / 4).map(
-                    (workExperience, index) => (
-                      <div key={index} className="resume-item">
-                        <WorkExperienceItem
-                          showProjects
-                          workItem={workExperience}
-                        />
-                      </div>
-                    )
-                  )}
-                </div>
-              </>
-            )}
 
-            {/* //Display Single Column for Web Category */}
-            {resume == "Web Development" && (
-              <div
-                className="col-lg-12"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
+            <>
+              <div className="col-lg-6">
                 {shownExperiences
-                  .filter((exp) => exp.category === "Web Development")
+                  .slice(0, shownExperiences.length / 4)
                   .map((workExperience, index) => (
                     <div key={index} className="resume-item">
                       <WorkExperienceItem
@@ -124,16 +88,40 @@ const ResumePage = () => {
                     </div>
                   ))}
               </div>
+              <div className="col-lg-6">
+                {shownExperiences
+                  .slice(shownExperiences.length / 4)
+                  .map((workExperience, index) => (
+                    <div key={index} className="resume-item">
+                      <WorkExperienceItem
+                        showProjects
+                        workItem={workExperience}
+                      />
+                    </div>
+                  ))}
+              </div>
+            </>
+
+            {/* //Display Single Column for Web Category */}
+            {resume == "Web Development" && (
+              <div className="col-lg-12">
+                {WorkExperiences.filter(
+                  (exp) => exp.category === "Web Development"
+                ).map((workExperience, index) => (
+                  <div key={index} className="resume-item">
+                    <WorkExperienceItem
+                      showProjects
+                      workItem={workExperience}
+                    />
+                  </div>
+                ))}
+              </div>
             )}
 
             {/* //Display 2 Columns for All*/}
             {resume == "Civil Engineering" && (
               <>
-                <div
-                  className="col-lg-6"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
+                <div className="col-lg-6">
                   {WorkExperiences.filter(
                     (exp) => exp.category === "Civil Engineering"
                   )
@@ -147,11 +135,7 @@ const ResumePage = () => {
                       </div>
                     ))}
                 </div>
-                <div
-                  className="col-lg-6"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
+                <div className="col-lg-6">
                   {WorkExperiences.filter(
                     (exp) => exp.category === "Civil Engineering"
                   )
