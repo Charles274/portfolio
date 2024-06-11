@@ -32,7 +32,7 @@ const ResumePage = () => {
                 id="Web Development"
                 onClick={handleFilter}
               >
-                {"Filter Frontend Developer"}
+                Filter Frontend Developer
                 <i className="bi bi-funnel"></i>
               </button>
               <button
@@ -42,7 +42,7 @@ const ResumePage = () => {
                 id="Civil Engineering"
                 onClick={handleFilter}
               >
-                {"Filter Civil Engineer"}
+                Filter Civil Engineer
                 <i className="bi bi-funnel"></i>
               </button>
               <button
