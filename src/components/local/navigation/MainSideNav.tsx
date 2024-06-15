@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 import { useEffect, useState } from "react";
 
-const Header = () => {
+const MainSideNav = () => {
   const { currentSection } = useActiveSection();
   const [isSideNavOpen, setSideNavOpen] = useState<boolean | null>(null);
 
@@ -91,9 +92,9 @@ const Header = () => {
 
         <nav id="navbar" className="nav-menu navbar">
           <ul>
-            {navItems.map((item) => (
+            {SectionNavItems.map((item) => (
               <li key={item.id}>
-                <LinkListItem
+                <SectionNavItem
                   currentSection={currentSection}
                   icon={item.iconClass}
                   sectionId={item.sectionId}
@@ -109,17 +110,17 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MainSideNav;
 
 interface ListItemProps {
-  currentSection: string;
-  sectionId: string;
-  sectionName: string;
+  currentSection?: string;
+  sectionId?: string;
+  sectionName?: string;
   icon: string;
   onClick: () => void;
 }
 
-const LinkListItem: React.FC<ListItemProps> = ({
+export const SectionNavItem: React.FC<ListItemProps> = ({
   currentSection,
   sectionId,
   sectionName,
@@ -127,19 +128,19 @@ const LinkListItem: React.FC<ListItemProps> = ({
   icon,
 }) => {
   return (
-    <a
-      href={`#${sectionId}`}
+    <HashLink
+      to={`/#${sectionId}`}
       className={currentSection === sectionId ? "active" : "nav-link scrollto"}
       onClick={onClick}
     >
       <i className={icon}></i>{" "}
       <span className="nav-link-item">{sectionName}</span>
-    </a>
+    </HashLink>
   );
 };
 
-//Nav Items
-const navItems = [
+//Section Nav Items
+const SectionNavItems = [
   {
     id: 1,
     sectionId: "hero",
