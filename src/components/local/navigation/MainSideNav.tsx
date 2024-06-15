@@ -59,9 +59,6 @@ const MainSideNav = () => {
             <a href="/">Charles Owusu</a>
           </h1>
           <div className="social-links mt-3 text-center">
-            <a href="#" className="twitter">
-              <i className="bi bi-twitter"></i>
-            </a>
             <a
               href="https://www.facebook.com/charles.n.owusu"
               className="facebook"
