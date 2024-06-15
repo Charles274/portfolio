@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useActiveSection } from "../../../hooks/useActiveSection";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 const MainSideNav = () => {
-  const { currentSection } = useActiveSection();
+  const { currentSection, setCurrentSection } = useActiveSection();
   const [isSideNavOpen, setSideNavOpen] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -33,6 +33,8 @@ const MainSideNav = () => {
     const width = window.innerWidth;
     if (width < 1200) setSideNavOpen(!isSideNavOpen);
   };
+
+  const handleNavLinkClick = () => {};
 
   return (
     <header id="header" style={{ left: isSideNavOpen ? "0px" : "-300px" }}>
@@ -93,13 +95,24 @@ const MainSideNav = () => {
               <li key={item.id}>
                 <SectionNavItem
                   currentSection={currentSection}
+                  setCurrentSection={setCurrentSection}
                   icon={item.iconClass}
                   sectionId={item.sectionId}
                   sectionName={item.sectionName}
-                  onClick={handleToggleSideNavOpen}
+                  onClick={handleNavLinkClick}
                 />
               </li>
             ))}
+            <Link
+              to={`/events`}
+              onClick={() => setCurrentSection("events")}
+              className={
+                currentSection === "events" ? "active" : "nav-link scrollto"
+              }
+            >
+              <i className="bi bi-book"></i>{" "}
+              <span className="nav-link-item">Events</span>
+            </Link>
           </ul>
         </nav>
       </div>
@@ -115,6 +128,7 @@ interface ListItemProps {
   sectionName?: string;
   icon: string;
   onClick: () => void;
+  setCurrentSection: Dispatch<SetStateAction<string>>;
 }
 
 export const SectionNavItem: React.FC<ListItemProps> = ({
@@ -123,12 +137,18 @@ export const SectionNavItem: React.FC<ListItemProps> = ({
   sectionName,
   onClick,
   icon,
+  setCurrentSection,
 }) => {
+  const handleNavItemClick = () => {
+    setCurrentSection(sectionId || "");
+    onClick();
+  };
+
   return (
     <HashLink
       to={`/#${sectionId}`}
       className={currentSection === sectionId ? "active" : "nav-link scrollto"}
-      onClick={onClick}
+      onClick={handleNavItemClick}
     >
       <i className={icon}></i>{" "}
       <span className="nav-link-item">{sectionName}</span>
