@@ -103,7 +103,7 @@ const MainSideNav = () => {
                 />
               </li>
             ))}
-            <Link
+            {/* <Link
               to={`/events`}
               onClick={() => setCurrentSection("events")}
               className={
@@ -112,7 +112,7 @@ const MainSideNav = () => {
             >
               <i className="bi bi-book"></i>{" "}
               <span className="nav-link-item">Events</span>
-            </Link>
+            </Link> */}
           </ul>
         </nav>
       </div>

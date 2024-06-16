@@ -2,6 +2,7 @@
 import React from "react";
 import "./App.css";
 import "./assets/css/style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //Providers
 import { ActiveSectionProvider } from "./providers/ActiveSectionProvider";
@@ -19,6 +20,7 @@ import RootLayout from "./layouts/RootLayout";
 import PortfolioPage from "./pages/portfolio/PortfolioPage";
 import NoMatch from "./pages/no-match/NoMatch";
 import ResumePage from "./pages/resume/ResumePage";
+import EventsPage from "./pages/events/EventsPage";
 // import DetailsPageLayout from "./layouts/DetailsPageLayout";
 
 const router = createBrowserRouter(
@@ -31,6 +33,9 @@ const router = createBrowserRouter(
       </Route>
       <Route path="resume">
         <Route index element={<ResumePage />}></Route>
+      </Route>
+      <Route path="events">
+        <Route index element={<EventsPage />}></Route>
       </Route>
       <Route path="*" element={<NoMatch />} />
     </Route>
