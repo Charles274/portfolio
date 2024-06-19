@@ -1,18 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AllProjects } from "../../../../data/projects/Projects.model";
 import { PortfolioItem } from "../../../../models/portfolio.model";
-import { SlickPortfolioCarousel } from "../../../../components/foreign/general-shared/react-slick";
 import { Link } from "react-router-dom";
 import { getMonthYear } from "../../../../utils/DateFormatter";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
-type PortfolioSectionProps = {
-  layoutConfig: "carousel" | "grid";
-};
-
-const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
+const PortfolioSection = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Set animation duration
@@ -37,6 +32,23 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
     setFilter("All");
   };
 
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const handleArrowClick = (direction: "left" | "right") => {
+    const scrollAmount = 320; // Adjust this value based on the scroll distance you prefer
+
+    if (carouselRef.current) {
+      console.log(carouselRef.current.scrollLeft);
+
+      const scrollContainer = carouselRef.current;
+      if (direction === "left") {
+        scrollContainer.scrollLeft -= scrollAmount;
+      } else {
+        scrollContainer.scrollLeft += scrollAmount;
+      }
+    }
+  };
+
   return (
     <section
       id="portfolio"
@@ -57,11 +69,9 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
         </div>
 
         <div className="row">
-          {layoutConfig === "carousel" && (
-            <div className="d-flex justify-content-end">
-              <Link to={"/portfolio"}>See All</Link>
-            </div>
-          )}
+          <div className="d-flex justify-content-end">
+            <Link to={"/portfolio"}>See All</Link>
+          </div>
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
               <li
@@ -94,7 +104,33 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
           </div>
         </div>
 
-        <SlickPortfolioCarousel items={projects} />
+        <div className="portfolio-carousel-container d-flex" ref={carouselRef}>
+          {projects.map((project, index) => (
+            <PortfolioCard
+              title={project.title}
+              projectStartDate={project.projectStartDate}
+              category={project.category}
+              id={project.id}
+              projectEndDate={project.projectEndDate}
+              tags={project.tags}
+              key={index}
+              images={project.images}
+            />
+          ))}
+          <div
+            className="carousel-arrow left"
+            onClick={() => handleArrowClick("left")}
+          >
+            <i className="bi bi-caret-left-fill"></i>
+          </div>
+
+          <div
+            className="carousel-arrow right"
+            onClick={() => handleArrowClick("right")}
+          >
+            <i className="bi bi-caret-right-fill"></i>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -112,7 +148,7 @@ export const PortfolioCard = ({
   projectEndDate,
 }: PortfolioItem) => {
   return (
-    <div className="portfolio-wrap card d-flex flex-column justify-content-between p-3 m-2">
+    <div className="portfolio-wrap card d-flex flex-column justify-content-between  p-3 m-2">
       <div className="portfolio-header d-flex justify-content-between">
         <div className="portfolio-project-logo">
           <i className={category?.iconClass}></i>

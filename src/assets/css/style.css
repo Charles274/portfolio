@@ -598,6 +598,34 @@ section {
   margin-right: 0;
 }
 
+.portfolio .portfolio-carousel-container {
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+/* Hide the WebKit scrollbar */
+.portfolio .portfolio-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio .portfolio-carousel-container .carousel-arrow {
+  font-size: 3rem;
+  cursor: pointer;
+  position: fixed;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 999; /* Ensure the arrows appear above other content */
+  opacity: 0.1;
+}
+
+.portfolio .portfolio-carousel-container .carousel-arrow.left {
+  left: 0;
+}
+
+.portfolio .portfolio-carousel-container .carousel-arrow.right {
+  right: 0;
+}
+
 .portfolio .portfolio-wrap {
   background-color: var(--post-card-background-color);
   color: var(--main-font-color);
@@ -606,14 +634,20 @@ section {
   overflow: hidden;
   z-index: 1;
   border-radius: 16px;
-  height: 100%;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  min-width: 320px;
+}
+
+@media (width > 480px) {
+  .portfolio .portfolio-wrap {
+    min-width: 400px;
+  }
 }
 
 .portfolio .portfolio-wrap:hover {
-  box-shadow: 0 3px 2px var(--main-font-color);
-  transform: translateY(-5px);
+  box-shadow: 0 2px 2px 2px var(--main-font-color),
+    0 -2px 2px 2px var(--main-font-color);
 }
 
 .portfolio .portfolio-wrap::before {
