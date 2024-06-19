@@ -90,39 +90,11 @@ const PortfolioSection = ({ layoutConfig }: PortfolioSectionProps) => {
               >
                 Civil
               </li>
-              {/* <li data-filter=".filter-web">Web</li> */}
             </ul>
           </div>
         </div>
 
-        {layoutConfig === "carousel" && (
-          <SlickPortfolioCarousel items={projects} />
-        )}
-
-        {layoutConfig === "grid" && (
-          <div
-            className="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            {projects.map((item, index) => (
-              <div
-                key={index}
-                className="col-lg-4 col-md-6 portfolio-item filter-app mb-4"
-              >
-                <PortfolioCard
-                  images={item.images}
-                  title={item.title}
-                  category={item.category}
-                  tags={item.tags}
-                  id={item.id}
-                  projectStartDate={item.projectStartDate}
-                  projectEndDate={item.projectEndDate}
-                />
-              </div>
-            ))}
-          </div>
-        )}
+        <SlickPortfolioCarousel items={projects} />
       </div>
     </section>
   );
