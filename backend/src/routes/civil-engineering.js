@@ -1,14 +1,12 @@
-import { Router } from "express";
-
-const router = Router();
-
-import {
+const express = require("express");
+const router = express.Router();
+const {
   getCivilProjectItems,
   getCivilProjectItemById,
   createCivilProjectItem,
   updateCivilProjectItem,
   deleteCivilProjectItem,
-} from "../controllers/civil-engineering";
+} = require("../controllers/civil-engineering");
 
 // Define routes for your civil engineering projects
 router.get("/", getCivilProjectItems);
@@ -18,4 +16,4 @@ router.put("/:id", updateCivilProjectItem);
 router.delete("/:id", deleteCivilProjectItem);
 
 // Export the router
-export default router;
+module.exports = router;

@@ -1,18 +1,17 @@
-import { Request, Response } from "express";
-import CivilProjectItem from "../models/civil-engineering";
+const CivilProjectItem = require("../models/civil-engineering");
 
 // Get all projects
-const getCivilProjectItems = async (req: Request, res: Response) => {
+const getCivilProjectItems = async (req, res) => {
   try {
     const items = await CivilProjectItem.find();
     res.status(200).json(items);
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
 // Get a project by ID
-const getCivilProjectItemById = async (req: Request, res: Response) => {
+const getCivilProjectItemById = async (req, res) => {
   try {
     const item = await CivilProjectItem.findById(req.params.id);
     if (item) {
@@ -20,25 +19,25 @@ const getCivilProjectItemById = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
 // Create a new project
-const createCivilProjectItem = async (req: Request, res: Response) => {
+const createCivilProjectItem = async (req, res) => {
   const newItem = new CivilProjectItem(req.body);
 
   try {
     const savedItem = await newItem.save();
     res.status(201).json(savedItem);
-  } catch (err: any) {
+  } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
 // Update an existing project
-const updateCivilProjectItem = async (req: Request, res: Response) => {
+const updateCivilProjectItem = async (req, res) => {
   try {
     const updatedItem = await CivilProjectItem.findByIdAndUpdate(
       req.params.id,
@@ -50,13 +49,13 @@ const updateCivilProjectItem = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
 // Delete a project
-const deleteCivilProjectItem = async (req: Request, res: Response) => {
+const deleteCivilProjectItem = async (req, res) => {
   try {
     const deletedItem = await CivilProjectItem.findByIdAndDelete(req.params.id);
     if (deletedItem) {
@@ -64,13 +63,13 @@ const deleteCivilProjectItem = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
 // Export all functions
-export {
+module.exports = {
   getCivilProjectItems,
   getCivilProjectItemById,
   createCivilProjectItem,

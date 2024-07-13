@@ -1,9 +1,5 @@
-import mongoose, { Schema } from "mongoose";
-import {
-  PortfolioItem,
-  CategoryName,
-  ProjectStatus,
-} from "../../../frontend/src/models/portfolio";
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const projectDescriptionSchema = new Schema({
   introduction: { type: String },
@@ -14,11 +10,14 @@ const projectDescriptionSchema = new Schema({
 });
 
 const categorySchema = new Schema({
-  name: { type: String, enum: Object.values(CategoryName) },
+  name: {
+    type: String,
+    enum: ["CategoryName1", "CategoryName2", "CategoryName3"],
+  }, // Replace with actual enum values
   iconClass: { type: String },
 });
 
-const CivilProjectItemSchema = new Schema(
+const portfolioItemSchema = new Schema(
   {
     title: { type: String, required: true },
     category: { type: categorySchema },
@@ -34,11 +33,14 @@ const CivilProjectItemSchema = new Schema(
     projectStartDate: { type: Date, required: true },
     projectEndDate: { type: Date, required: true },
     client: { type: String },
-    status: { type: String, enum: Object.values(ProjectStatus) },
+    status: { type: String, enum: ["Status1", "Status2", "Status3"] }, // Replace with actual enum values
   },
   { timestamps: true }
 );
 
-const CivilProjectItem = mongoose.model("CivilProject", CivilProjectItemSchema);
+const PortfolioProjectItem = mongoose.model(
+  "PortfolioItem",
+  portfolioItemSchema
+);
 
-export default CivilProjectItem;
+module.exports = PortfolioProjectItem;

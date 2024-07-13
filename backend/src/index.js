@@ -1,16 +1,15 @@
-import express, { Application } from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import civilEngineeringRoutes from "./routes/civil-engineering";
-import webApplicationsRoutes from "./routes/web-applications";
-import portfolioRoute from "./routes/portfolio";
-// import projectsRoute from "./routes/projects";
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const civilEngineeringRoutes = require("./routes/civil-engineering");
+const webApplicationsRoutes = require("./routes/web-applications");
+const portfolioRoute = require("./routes/portfolio");
 
 // Load environment variables from .env file
 dotenv.config();
 
 // Initialize the Express application
-const app: Application = express();
+const app = express();
 
 // Use the port specified in the .env file or default to 5000
 const PORT = process.env.PORT || 5000;
@@ -21,13 +20,12 @@ app.use(express.json());
 // Use Routes
 app.use("/projects/civil-engineering", civilEngineeringRoutes);
 app.use("/projects/web-applications", webApplicationsRoutes);
-// app.use("/projects", projectsRoute);
 app.use("/", portfolioRoute);
 
 // Connect to DB and start server
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI!, {});
+    await mongoose.connect(process.env.MONGO_URI, {});
     console.log("MongoDB connected successfully!");
 
     app.listen(PORT, () => {

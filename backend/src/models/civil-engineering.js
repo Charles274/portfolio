@@ -1,9 +1,20 @@
-import mongoose, { Schema } from "mongoose";
-import {
-  PortfolioItem,
-  CategoryName,
-  ProjectStatus,
-} from "../../../frontend/src/models/portfolio";
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+// Import enums or define them if needed
+const CategoryName = {
+  CATEGORY1: "Category1",
+  CATEGORY2: "Category2",
+  CATEGORY3: "Category3",
+  // Add other categories as needed
+};
+
+const ProjectStatus = {
+  STATUS1: "Status1",
+  STATUS2: "Status2",
+  STATUS3: "Status3",
+  // Add other statuses as needed
+};
 
 const projectDescriptionSchema = new Schema({
   introduction: { type: String },
@@ -41,4 +52,4 @@ const CivilProjectItemSchema = new Schema(
 
 const CivilProjectItem = mongoose.model("CivilProject", CivilProjectItemSchema);
 
-export default CivilProjectItem;
+module.exports = CivilProjectItem;

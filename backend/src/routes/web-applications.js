@@ -1,21 +1,19 @@
-import { Router } from "express";
+const express = require("express");
+const router = express.Router();
 
-const router = Router();
-
-import {
+const {
   getWebAppProjectItems,
   getWebAppProjectItemById,
   createWebAppProjectItem,
   updateWebAppProjectItem,
   deleteWebAppProjectItem,
-} from "../controllers/web-applications";
+} = require("../controllers/web-applications");
 
-// Define routes for your civil engineering projects
+// Define routes for your web applications projects
 router.get("/", getWebAppProjectItems);
 router.post("/", createWebAppProjectItem);
 router.get("/:id", getWebAppProjectItemById);
 router.put("/:id", updateWebAppProjectItem);
 router.delete("/:id", deleteWebAppProjectItem);
 
-// Export the router
-export default router;
+module.exports = router;

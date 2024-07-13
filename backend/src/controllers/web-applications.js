@@ -1,16 +1,17 @@
-import { Request, Response } from "express";
-import WebAppProjectItem from "../models/web-applications";
+const WebAppProjectItem = require("../models/web-applications");
 
-const getWebAppProjectItems = async (req: Request, res: Response) => {
+// Get all web app projects
+const getWebAppProjectItems = async (req, res) => {
   try {
     const items = await WebAppProjectItem.find();
     res.status(200).json(items);
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-const getWebAppProjectItemById = async (req: Request, res: Response) => {
+// Get a web app project by ID
+const getWebAppProjectItemById = async (req, res) => {
   try {
     const item = await WebAppProjectItem.findById(req.params.id);
     if (item) {
@@ -18,23 +19,25 @@ const getWebAppProjectItemById = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-const createWebAppProjectItem = async (req: Request, res: Response) => {
+// Create a new web app project
+const createWebAppProjectItem = async (req, res) => {
   const newItem = new WebAppProjectItem(req.body);
 
   try {
     const savedItem = await newItem.save();
     res.status(201).json(savedItem);
-  } catch (err: any) {
+  } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
-const updateWebAppProjectItem = async (req: Request, res: Response) => {
+// Update an existing web app project
+const updateWebAppProjectItem = async (req, res) => {
   try {
     const updatedItem = await WebAppProjectItem.findByIdAndUpdate(
       req.params.id,
@@ -46,12 +49,13 @@ const updateWebAppProjectItem = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
-const deleteWebAppProjectItem = async (req: Request, res: Response) => {
+// Delete a web app project
+const deleteWebAppProjectItem = async (req, res) => {
   try {
     const deletedItem = await WebAppProjectItem.findByIdAndDelete(
       req.params.id
@@ -61,12 +65,13 @@ const deleteWebAppProjectItem = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: "Item not found" });
     }
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-export {
+// Export all functions
+module.exports = {
   getWebAppProjectItems,
   getWebAppProjectItemById,
   createWebAppProjectItem,
