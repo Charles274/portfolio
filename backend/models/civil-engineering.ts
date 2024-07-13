@@ -3,7 +3,7 @@ import {
   PortfolioItem,
   CategoryName,
   ProjectStatus,
-} from "../../portfolio/src/models/portfolio.model";
+} from "../../portfolio/src/models/portfolio";
 
 const projectDescriptionSchema = new Schema({
   introduction: { type: String },
@@ -18,7 +18,7 @@ const categorySchema = new Schema({
   iconClass: { type: String },
 });
 
-const WebAppProjectItemSchema = new Schema(
+const CivilProjectItemSchema = new Schema(
   {
     title: { type: String, required: true },
     category: { type: categorySchema },
@@ -39,9 +39,6 @@ const WebAppProjectItemSchema = new Schema(
   { timestamps: true }
 );
 
-const WebAppProjectItem = mongoose.model<PortfolioItem>(
-  "WebAppProject",
-  WebAppProjectItemSchema
-);
+const CivilProjectItem = mongoose.model("CivilProject", CivilProjectItemSchema);
 
-export default WebAppProjectItem;
+export default CivilProjectItem;

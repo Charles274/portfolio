@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import WebAppProjectItem from "../models/web-applications.model";
+import WebAppProjectItem from "../models/web-applications";
 
 const getWebAppProjectItems = async (req: Request, res: Response) => {
   try {

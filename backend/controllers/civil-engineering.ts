@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import CivilProjectItem from "../models/civil-engineering.model";
+import CivilProjectItem from "../models/civil-engineering";
 
 // Get all projects
 const getCivilProjectItems = async (req: Request, res: Response) => {
