@@ -636,12 +636,14 @@ section {
   border-radius: 16px;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  min-width: 320px;
+  min-width: 300px;
+  height: 100%;
 }
 
 @media (width > 480px) {
   .portfolio .portfolio-wrap {
-    min-width: 400px;
+    height: 100%;
+    /* min-width: 300px; */
   }
 }
 

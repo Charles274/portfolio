@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import { AllProjects } from "../../../data/projects/Projects.model";
 import BootstrapCarousel from "../../../components/foreign/general-shared/BootstrapCarousel";

@@ -148,7 +148,7 @@ export const PortfolioCard = ({
   projectEndDate,
 }: PortfolioItem) => {
   return (
-    <div className="portfolio-wrap card d-flex flex-column justify-content-between  p-3 m-2">
+    <div className="portfolio-wrap card d-flex flex-column justify-content-between w-100 p-3 m-2">
       <div className="portfolio-header d-flex justify-content-between">
         <div className="portfolio-project-logo">
           <i className={category?.iconClass}></i>

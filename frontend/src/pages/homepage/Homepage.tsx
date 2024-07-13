@@ -1,4 +1,6 @@
 // Import Components
+import React from "react";
+
 import AboutSection from "./components/about-section/AboutSection";
 import FactsSection from "./components/facts-section/FactsSection";
 import SkillsSection from "./components/skills-section/SkillsSection";
