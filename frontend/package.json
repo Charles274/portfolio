@@ -14,9 +14,9 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
-    "react": "19.0.0-rc-df5f2736-20240712",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
-    "react-dom": "19.0.0-rc-df5f2736-20240712",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "react-router-hash-link": "^2.4.3",
     "react-scroll": "^1.9.0",
@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
-    "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
     "@types/react-router-hash-link": "^2.4.9",
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
@@ -40,9 +40,5 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc"
   }
 }
