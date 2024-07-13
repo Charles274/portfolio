@@ -1,4 +1,4 @@
-import { CategoryName } from "../../models/portfolio.model";
+import { CategoryName } from "../../models/portfolio";
 import { ResumeWorkItem } from "../../models/resume.model";
 
 export const MNJWorkDuties = [

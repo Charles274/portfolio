@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { AllProjects } from "../../../../data/projects/Projects.model";
-import { PortfolioItem } from "../../../../models/portfolio.model";
+import { PortfolioItem } from "../../../../models/portfolio";
 import { Link } from "react-router-dom";
 import { getMonthYear } from "../../../../utils/DateFormatter";
 import React, { useEffect } from "react";

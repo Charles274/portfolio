@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { PortfolioCard } from "../../../pages/homepage/components/portfolio-section/PortfolioSection";
-import { PortfolioItem } from "../../../models/portfolio.model";
+import { PortfolioItem } from "../../../models/portfolio";
 
 type SlickImagesProps = {
   children?: React.ReactNode;

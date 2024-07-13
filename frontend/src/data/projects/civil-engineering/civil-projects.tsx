@@ -2,7 +2,7 @@ import {
   CivilCategory,
   PortfolioItem,
   ProjectStatus,
-} from "../../../models/portfolio.model";
+} from "../../../models/portfolio";
 
 export const CivilProjects: PortfolioItem[] = [
   {

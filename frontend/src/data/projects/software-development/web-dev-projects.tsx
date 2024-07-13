@@ -1,4 +1,4 @@
-import { PortfolioItem, WebCategory } from "../../../models/portfolio.model";
+import { PortfolioItem, WebCategory } from "../../../models/portfolio";
 
 export const WebDevProjects: PortfolioItem[] = [
   {

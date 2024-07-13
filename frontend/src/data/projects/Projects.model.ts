@@ -1,4 +1,4 @@
-import { PortfolioItem } from "../../models/portfolio.model";
+import { PortfolioItem } from "../../models/portfolio";
 import { CivilProjects } from "./civil-engineering/civil-projects";
 import { WebDevProjects } from "./software-development/web-dev-projects";
 

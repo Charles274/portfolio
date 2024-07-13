@@ -1,4 +1,4 @@
-import { CategoryName } from "./portfolio.model";
+import { CategoryName } from "./portfolio";
 
 export interface ResumeWorkItem {
   id: number;
