@@ -9,13 +9,13 @@ const PortfolioPage = () => {
       <section
         id="portfolio"
         className="portfolio section-bg"
-        data-aos="fade-up"
-        data-aos-delay="100"
+        // data-aos="fade-up"
+        // data-aos-delay="100"
       >
         <div
           className="row portfolio-container"
-          data-aos="fade-up"
-          data-aos-delay="100"
+          // data-aos="fade-up"
+          // data-aos-delay="100"
         >
           {AllProjects.map((item, index) => (
             <div key={index} className="col-lg-4 g-3">
