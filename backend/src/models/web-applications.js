@@ -17,7 +17,7 @@ const categorySchema = new Schema({
   iconClass: { type: String },
 });
 
-const CivilProjectItemSchema = new Schema(
+const WebAppItemSchema = new Schema(
   {
     title: { type: String, required: true },
     category: { type: categorySchema },
@@ -38,6 +38,6 @@ const CivilProjectItemSchema = new Schema(
   { timestamps: true }
 );
 
-const CivilProjectItem = mongoose.model("CivilProject", CivilProjectItemSchema);
+const WebAppItem = mongoose.model("WebApp", WebAppItemSchema);
 
-module.exports = CivilProjectItem;
+module.exports = WebAppItem;

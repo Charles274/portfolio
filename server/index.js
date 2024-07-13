@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const civilEngineeringRoutes = require("./routes/civil-engineering");
-// const webApplicationsRoutes = require("./routes/web-applications");
-// const portfolioRoute = require("./routes/portfolio");
+const webApplicationsRoutes = require("./routes/web-applications");
+const portfolioRoute = require("./routes/portfolio");
 
 // Load environment variables from .env file
 dotenv.config();
@@ -19,8 +19,8 @@ app.use(express.json());
 
 // Use Routes
 app.use("/projects/civil-engineering", civilEngineeringRoutes);
-// app.use("/projects/web-applications", webApplicationsRoutes);
-// app.use("/", portfolioRoute);
+app.use("/projects/web-applications", webApplicationsRoutes);
+app.use("/", portfolioRoute);
 
 // Connect to DB and start server
 const startServer = async () => {
