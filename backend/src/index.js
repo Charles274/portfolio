@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Use Routes
-app.use("api/projects/civil-engineering", civilEngineeringRoutes);
-app.use("api/projects/web-applications", webApplicationsRoutes);
-app.use("api/projects", projectsRoute);
+app.use("/api/projects/civil-engineering", civilEngineeringRoutes);
+app.use("/api/projects/web-applications", webApplicationsRoutes);
+app.use("/api/projects", projectsRoute);
 
 // Connect to DB and start server
 const startServer = async () => {

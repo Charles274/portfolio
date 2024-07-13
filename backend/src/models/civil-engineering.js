@@ -3,16 +3,16 @@ const Schema = mongoose.Schema;
 
 // Import enums or define them if needed
 const CategoryName = {
-  CATEGORY1: "Category1",
-  CATEGORY2: "Category2",
-  CATEGORY3: "Category3",
+  All: "All",
+  Web: "Web Development",
+  Civil: "Civil Engineering",
   // Add other categories as needed
 };
 
 const ProjectStatus = {
-  STATUS1: "Status1",
-  STATUS2: "Status2",
-  STATUS3: "Status3",
+  Complete: "Complete",
+  Hold: "On Hold",
+  Ongoing: "Ongoing",
   // Add other statuses as needed
 };
 
@@ -32,7 +32,7 @@ const categorySchema = new Schema({
 const CivilProjectItemSchema = new Schema(
   {
     title: { type: String, required: true },
-    category: { type: categorySchema },
+    category: { type: String, enum: Object.values(CategoryName) },
     location: { type: String },
     brief: { type: String },
     consultant: { type: String },
@@ -43,7 +43,7 @@ const CivilProjectItemSchema = new Schema(
     tags: [{ type: String }],
     projectUrl: { type: String },
     projectStartDate: { type: Date, required: true },
-    projectEndDate: { type: Date, required: true },
+    projectEndDate: { type: Date },
     client: { type: String },
     status: { type: String, enum: Object.values(ProjectStatus) },
   },
