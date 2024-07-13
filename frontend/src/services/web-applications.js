@@ -1,77 +1,65 @@
-const WebAppProjectItem = require("../models/web-applications");
+import axios from "axios";
 
-// Get all web app projects
-const getWebAppProjectItems = async (req, res) => {
+const BASE_URL = `${
+  import.meta.env.VITE_API_BASE_URL
+}/projects/civil-engineering`;
+
+const getWebAppProjectItems = async () => {
   try {
-    const items = await WebAppProjectItem.find();
-    res.status(200).json(items);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
-
-// Get a web app project by ID
-const getWebAppProjectItemById = async (req, res) => {
-  try {
-    const item = await WebAppProjectItem.findById(req.params.id);
-    if (item) {
-      res.status(200).json(item);
-    } else {
-      res.status(404).json({ message: "Item not found" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
-
-// Create a new web app project
-const createWebAppProjectItem = async (req, res) => {
-  const newItem = new WebAppProjectItem(req.body);
-
-  try {
-    const savedItem = await newItem.save();
-    res.status(201).json(savedItem);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
-// Update an existing web app project
-const updateWebAppProjectItem = async (req, res) => {
-  try {
-    const updatedItem = await WebAppProjectItem.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
+    const response = await axios.get(`${BASE_URL}/`);
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      error.response.data.message || "Error fetching civil project items"
     );
-    if (updatedItem) {
-      res.status(200).json(updatedItem);
-    } else {
-      res.status(404).json({ message: "Item not found" });
-    }
-  } catch (err) {
-    res.status(400).json({ message: err.message });
   }
 };
 
-// Delete a web app project
-const deleteWebAppProjectItem = async (req, res) => {
+const getWebAppProjectItemById = async (id) => {
   try {
-    const deletedItem = await WebAppProjectItem.findByIdAndDelete(
-      req.params.id
+    const response = await axios.get(`${BASE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      error.response.data.message || "Error fetching civil project item"
     );
-    if (deletedItem) {
-      res.status(200).json({ message: "Item deleted successfully" });
-    } else {
-      res.status(404).json({ message: "Item not found" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
   }
 };
 
-// Export all functions
-module.exports = {
+const createWebAppProjectItem = async (data) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/`, data);
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      error.response.data.message || "Error creating civil project item"
+    );
+  }
+};
+
+const updateWebAppProjectItem = async (id, data) => {
+  try {
+    const response = await axios.put(`${BASE_URL}/${id}`, data);
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      error.response.data.message || "Error updating civil project item"
+    );
+  }
+};
+
+const deleteWebAppProjectItem = async (id) => {
+  try {
+    const response = await axios.delete(`${BASE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      error.response.data.message || "Error deleting civil project item"
+    );
+  }
+};
+
+export {
   getWebAppProjectItems,
   getWebAppProjectItemById,
   createWebAppProjectItem,
