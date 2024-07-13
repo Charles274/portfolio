@@ -1,26 +1,21 @@
-import { Express, Request, Response, Router } from "express";
+import { Router } from "express";
+
 const router = Router();
 
-// Define routes for your Web Application projects
-router.get("/", (req: Request, res: Response) => {
-  res.send("List of Web Application projects");
-});
+import {
+  getWebAppProjectItems,
+  getWebAppProjectItemById,
+  createWebAppProjectItem,
+  updateWebAppProjectItem,
+  deleteWebAppProjectItem,
+} from "../controllers/web-applications";
 
-router.post("/", (req: Request, res: Response) => {
-  res.send("Add a new Web Application project");
-});
-
-router.get("/:id", (req: Request, res: Response) => {
-  res.send("Details of Web Application project with id " + req.params.id);
-});
-
-router.put("/:id", (req: Request, res: Response) => {
-  res.send("Update Web Application project with id " + req.params.id);
-});
-
-router.delete("/:id", (req: Request, res: Response) => {
-  res.send("Delete Web Application project with id " + req.params.id);
-});
+// Define routes for your civil engineering projects
+router.get("/", getWebAppProjectItems);
+router.post("/", createWebAppProjectItem);
+router.get("/:id", getWebAppProjectItemById);
+router.put("/:id", updateWebAppProjectItem);
+router.delete("/:id", deleteWebAppProjectItem);
 
 // Export the router
 export default router;
