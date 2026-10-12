@@ -438,6 +438,7 @@ footer{padding-block:32px 40px}
           <label for="f-message">Message<textarea id="f-message" name="message" required></textarea></label>
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <button class="btn primary" type="submit">Send message</button>
+            <a class="btn" id="wa-send" href="https://wa.me/233544803023" target="_blank" rel="noopener">Send via WhatsApp</a>
             <p class="form-note" id="form-note" role="status"></p>
           </div>
         </form>
@@ -470,6 +471,24 @@ footer{padding-block:32px 40px}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
       .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();note.className='form-note ok';note.textContent='Message sent. I’ll reply by email.';})
       .catch(function(){note.className='form-note';note.textContent='That didn’t send. Please email charles274@live.com instead.';});
+  });
+
+  // "Send via WhatsApp": opens WhatsApp with the form's contents already typed to Charles.
+  var wa=document.getElementById('wa-send');
+  function v(id){return document.getElementById(id).value.trim();}
+  function waText(){
+    var who=v('f-name')||'a visitor';
+    var contact=[v('f-email'),v('f-phone')].filter(Boolean).join(', ');
+    var lines=['Hello Charles, this is '+who+(contact?' ('+contact+')':'')+'.'];
+    if(v('f-subject'))lines.push('Subject: '+v('f-subject'));
+    lines.push('',v('f-message'),'','Sent from charles-owusu.netlify.app');
+    return lines.join('\n');
+  }
+  function updateWa(){wa.href='https://wa.me/233544803023?text='+encodeURIComponent(waText());}
+  form.addEventListener('input',updateWa);
+  wa.addEventListener('click',function(e){
+    if(!v('f-message')){e.preventDefault();note.className='form-note';note.textContent='Type your message first, then tap Send via WhatsApp.';document.getElementById('f-message').focus();return;}
+    updateWa();
   });
 })();
 </script>
