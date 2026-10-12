@@ -10,7 +10,7 @@
 <title>Charles Owusu Agyapong | Civil Engineer &amp; Project Manager</title>
 <meta name="description" content="Charles Owusu Agyapong — Civil Engineer and Project Manager in Accra, Ghana. Construction project management, QA/QC and site delivery for building, road and drainage works.">
 <meta property="og:title" content="Charles Owusu Agyapong | Civil Engineer & Project Manager">
-<meta property="og:description" content="Project Manager at Krane Construction Ltd. 8+ years delivering building, road, drainage and structural concrete works in Ghana.">
+<meta property="og:description" content="Civil Engineer and Project Manager. 8+ years delivering building, road, drainage and structural concrete works in Ghana.">
 <meta property="og:image" content="https://charles-owusu.netlify.app/images/site-hero.jpg">
 <meta property="og:url" content="https://charles-owusu.netlify.app/">
 <meta name="twitter:card" content="summary_large_image">
@@ -213,7 +213,7 @@ footer{padding-block:32px 40px}
         <p class="eyebrow">Civil Engineer &middot; Accra, Ghana</p>
         <h1>Charles Owusu <span class="last">Agyapong</span></h1>
         <p class="role">Project Manager &nbsp;|&nbsp; QA/QC &nbsp;|&nbsp; Construction Management</p>
-        <p class="lead">I plan, build and check construction works for a living. Over 8 years on building, road, drainage and structural concrete projects, from site supervision on Shimizu’s N8 road to managing a new Stake Centre in Ejisu.</p>
+        <p class="lead">I plan, deliver and check construction works, from first setting-out to handover. Over 8 years on building, road, drainage and structural concrete projects for Ghanaian and international contractors.</p>
         <div class="ctas">
           <a class="btn primary" href="#contact">Get in touch</a>
           <a class="btn" href="/Charles-Owusu-Agyapong-CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
@@ -222,15 +222,15 @@ footer{padding-block:32px 40px}
       <figure class="photo">
         <div class="dim" aria-hidden="true"><b>ON SITE</b></div>
         <img src="/images/site-hero.jpg" alt="Charles in a high-visibility vest on a construction site, in front of a reinforced concrete frame building" width="1600" height="720">
-        <figcaption><span>Project Manager, Krane Construction Ltd</span><span>Accra, Ghana</span></figcaption>
+        <figcaption><span>Civil Engineer &amp; Project Manager</span><span>Accra, Ghana</span></figcaption>
       </figure>
     </div>
   </section>
 
   <div class="stats" aria-label="At a glance">
     <div class="stat"><div class="n">8<small>+</small></div><div class="l">years in building, road and drainage works</div></div>
-    <div class="stat"><div class="n">2</div><div class="l">live projects with Krane Construction</div></div>
-    <div class="stat"><div class="n">16</div><div class="l">workers led per day on the N8 road rehabilitation</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">awards and certificates for performance and safety</div></div>
+    <div class="stat"><div class="n">16</div><div class="l">site workers led day to day, at peak</div></div>
     <div class="stat"><div class="n">MSc</div><div class="l">Construction Management, KNUST (Jan 2027)</div></div>
   </div>
 
@@ -239,7 +239,7 @@ footer{padding-block:32px 40px}
       <div class="spacer"><p class="eyebrow">About</p></div>
       <div class="text">
         <p>Civil Engineer and Project Manager with over 8 years’ experience delivering building, road, drainage and structural concrete works for Ghanaian and international contractors.</p>
-        <p>I’m currently Project Manager at Krane Construction Ltd, leading contract delivery on the Stake Centre in Ejisu. Before that I ran QA/QC on the Ashesi STEM Innovation Center, and spent two years as a site engineer on Shimizu-Dainipon’s N8 road rehabilitation.</p>
+        <p>My work covers the full delivery cycle: planning and programming the works, administering the contract, running quality control on site, and keeping teams safe and productive. I bring a structural design background to every site, so problems get solved early and in line with the drawings.</p>
         <ul class="strengths">
           <li><b>Project management</b><span>Planning and scheduling, contract administration, variations, and coordination with consultants and clients</span></li>
           <li><b>Quality</b><span>QC plans, inspection and test plans, structural inspections, material testing and non-conformance close-out</span></li>
@@ -438,7 +438,6 @@ footer{padding-block:32px 40px}
           <label for="f-message">Message<textarea id="f-message" name="message" required></textarea></label>
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <button class="btn primary" type="submit">Send message</button>
-            <a class="btn" id="wa-send" href="https://wa.me/233544803023" target="_blank" rel="noopener">Send via WhatsApp</a>
             <p class="form-note" id="form-note" role="status"></p>
           </div>
         </form>
@@ -473,23 +472,6 @@ footer{padding-block:32px 40px}
       .catch(function(){note.className='form-note';note.textContent='That didn’t send. Please email charles274@live.com instead.';});
   });
 
-  // "Send via WhatsApp": opens WhatsApp with the form's contents already typed to Charles.
-  var wa=document.getElementById('wa-send');
-  function v(id){return document.getElementById(id).value.trim();}
-  function waText(){
-    var who=v('f-name')||'a visitor';
-    var contact=[v('f-email'),v('f-phone')].filter(Boolean).join(', ');
-    var lines=['Hello Charles, this is '+who+(contact?' ('+contact+')':'')+'.'];
-    if(v('f-subject'))lines.push('Subject: '+v('f-subject'));
-    lines.push('',v('f-message'),'','Sent from charles-owusu.netlify.app');
-    return lines.join('\n');
-  }
-  function updateWa(){wa.href='https://wa.me/233544803023?text='+encodeURIComponent(waText());}
-  form.addEventListener('input',updateWa);
-  wa.addEventListener('click',function(e){
-    if(!v('f-message')){e.preventDefault();note.className='form-note';note.textContent='Type your message first, then tap Send via WhatsApp.';document.getElementById('f-message').focus();return;}
-    updateWa();
-  });
 })();
 </script>
 </body>
